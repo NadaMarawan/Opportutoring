@@ -1,10 +1,10 @@
 class CreateTutors < ActiveRecord::Migration[6.1]
   def change
-    create_table :tutors do |t|
+    create_table :tutors, id: false do |t|
       t.string :name
-      t.string :email
+      t.primary_key :email
       t.string :password
-      t.BLOB :picture
+      #t.blob :picture
       t.string :country
 
       t.timestamps
