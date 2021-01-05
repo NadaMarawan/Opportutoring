@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_04_235259) do
+ActiveRecord::Schema.define(version: 2021_01_05_024929) do
 
   create_table "matchings", force: :cascade do |t|
     t.integer "tutor_id", null: false
@@ -21,9 +21,8 @@ ActiveRecord::Schema.define(version: 2021_01_04_235259) do
     t.index ["tutor_id"], name: "index_matchings_on_tutor_id"
   end
 
-  create_table "students", force: :cascade do |t|
+  create_table "students", primary_key: "email", force: :cascade do |t|
     t.string "name"
-    t.string "email"
     t.string "password"
     t.string "country"
     t.integer "level"
