@@ -1,8 +1,8 @@
 class CreateStudents < ActiveRecord::Migration[6.1]
   def change
-    create_table :students, id: false do |t|
+    create_table :students do |t|
       t.string :name
-      t.primary_key :email
+      t.string :email
       t.string :password
       #t.blob :picture
       t.string :country
