@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_05_024929) do
+ActiveRecord::Schema.define(version: 2021_01_05_032649) do
 
   create_table "matchings", force: :cascade do |t|
     t.integer "tutor_id", null: false
@@ -21,21 +21,23 @@ ActiveRecord::Schema.define(version: 2021_01_05_024929) do
     t.index ["tutor_id"], name: "index_matchings_on_tutor_id"
   end
 
-  create_table "students", primary_key: "email", force: :cascade do |t|
+  create_table "students", force: :cascade do |t|
     t.string "name"
     t.string "password"
     t.string "country"
     t.integer "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
   end
 
-  create_table "tutors", primary_key: "email", force: :cascade do |t|
+  create_table "tutors", force: :cascade do |t|
     t.string "name"
     t.string "password"
     t.string "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
   end
 
   add_foreign_key "matchings", "students"
