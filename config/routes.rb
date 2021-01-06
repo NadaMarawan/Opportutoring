@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get "/students/:id", to: "students#show"
   post '/students', to: 'students#create'
   #resources :students
+
+  # UI mockup page: all-students
+  get '/students', to: 'students#index'
    
 end
