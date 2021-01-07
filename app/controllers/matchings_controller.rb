@@ -4,7 +4,7 @@ class MatchingsController < ApplicationController
   end
 
   #def index
-    #@matchings = matching.all
+  #@matchings = matching.all
   #end
 
   def new
