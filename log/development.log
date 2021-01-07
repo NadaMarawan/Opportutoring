@@ -2800,3 +2800,116 @@ Processing by StudentsController#index as HTML
 Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.2ms | Allocations: 4909)
 
 
+Started GET "/" for 127.0.0.1 at 2021-01-06 19:22:58 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nadashoukry/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nadashoukry/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.7ms | Allocations: 338)
+Completed 200 OK in 39ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 2734)
+
+
+Started GET "/tutors/new" for 127.0.0.1 at 2021-01-06 19:23:14 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 20.7ms | Allocations: 2976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 90.4ms | Allocations: 19989)
+Completed 200 OK in 132ms (Views: 92.9ms | ActiveRecord: 2.3ms | Allocations: 26995)
+
+
+Started POST "/tutors" for 127.0.0.1 at 2021-01-06 19:23:42 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"OmarShoukry", "password"=>"[FILTERED]", "country"=>"France", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:19:in `create'
+  [1m[36mTutor Create (1.3ms)[0m  [1m[32mINSERT INTO "tutors" ("name", "password", "country", "created_at", "updated_at", "email") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "OmarShoukry"], ["password", "nachos"], ["country", "France"], ["created_at", "2021-01-07 00:23:42.970010"], ["updated_at", "2021-01-07 00:23:42.970010"], ["email", "nada.marwan@mail.mcgill.ca"]]
+  ↳ app/controllers/tutors_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tutors_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/tutors/4
+Completed 302 Found in 16ms (ActiveRecord: 2.5ms | Allocations: 3167)
+
+
+Started GET "/tutors/4" for 127.0.0.1 at 2021-01-06 19:23:42 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  Rendered tutors/show.html.erb within layouts/application (Duration: 19.2ms | Allocations: 4393)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 4457)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.2ms | Allocations: 7846)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tutor' for #<ActionView::Base:0x00000000008c28>
+Did you mean?  @tutor):
+    1: <h1>New Tutor Created</h1>
+    2: <p><%= tutor.name %></p>
+  
+app/views/tutors/show.html.erb:2
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTutor Destroy (2.0ms)[0m  [1m[31mDELETE FROM "tutors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+Started GET "/" for 127.0.0.1 at 2021-01-06 19:25:21 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nadashoukry/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nadashoukry/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 18.6ms | Allocations: 604)
+Completed 200 OK in 37ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 3030)
+
+
+Started GET "/tutors/new" for 127.0.0.1 at 2021-01-06 19:25:28 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 17.3ms | Allocations: 2995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.4ms | Allocations: 9026)
+Completed 200 OK in 81ms (Views: 55.5ms | ActiveRecord: 2.9ms | Allocations: 15860)
+
+
+Started POST "/tutors" for 127.0.0.1 at 2021-01-06 19:25:39 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"OmarShoukry", "password"=>"[FILTERED]", "country"=>"France", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:19:in `create'
+  [1m[36mTutor Create (1.1ms)[0m  [1m[32mINSERT INTO "tutors" ("name", "password", "country", "created_at", "updated_at", "email") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "OmarShoukry"], ["password", "nachos"], ["country", "France"], ["created_at", "2021-01-07 00:25:39.211896"], ["updated_at", "2021-01-07 00:25:39.211896"], ["email", "nada.marwan@mail.mcgill.ca"]]
+  ↳ app/controllers/tutors_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tutors_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/tutors/5
+Completed 302 Found in 17ms (ActiveRecord: 2.8ms | Allocations: 3167)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-06 19:25:39 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  Rendered tutors/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3694)
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 5158)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-06 19:25:44 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 855)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 4437)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.1ms | Allocations: 4965)
+
+

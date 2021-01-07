@@ -1,0 +1,30 @@
+<!-- <h1>Tutors#new</h1> -->
+<!-- <p>Find me in app/views/tutors/new.html.erb</p> -->
+<h1>New Tutor</h1>
+
+<%= form_with model: @tutor do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.text_field :password %>
+  </div>
+
+  <div>
+    <%= form.label :country %><br>
+    <%= form.text_field :country %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </div>
+  <!--  profile picture--> 
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
