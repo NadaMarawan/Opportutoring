@@ -3636,3 +3636,124 @@ Processing by StudentsController#mytutors as HTML
 Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 5560)
 
 
+Started GET "/" for 127.0.0.1 at 2021-01-06 21:37:27 -0500
+  [1m[35m (11.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nadashoukry/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nadashoukry/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 18.3ms | Allocations: 357)
+Completed 200 OK in 40ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 2873)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-06 21:38:02 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.8ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 31.1ms | Allocations: 4403)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 10663)
+Completed 200 OK in 72ms (Views: 58.6ms | ActiveRecord: 2.1ms | Allocations: 13703)
+
+
+Started GET "/tutors/2" for 127.0.0.1 at 2021-01-06 21:38:08 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTutor Load (0.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.5ms | Allocations: 1504)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tutor with 'id'=2):
+  
+app/controllers/tutors_controller.rb:3:in `show'
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-06 21:38:11 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.9ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.9ms | Allocations: 1166)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tutor with 'id'=1):
+  
+app/controllers/tutors_controller.rb:3:in `show'
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-06 21:38:45 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  Rendered tutors/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 3901)
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 0.1ms | Allocations: 5023)
+
+
+Started GET "/tutors/5/mystudents" for 127.0.0.1 at 2021-01-06 21:38:58 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tutors/5/mystudents"):
+  
+Started GET "/tutors/5/students" for 127.0.0.1 at 2021-01-06 21:39:02 -0500
+Processing by TutorsController#mystudents as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:11:in `mystudents'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/mystudents.html.erb within layouts/application
+  Rendered tutors/mystudents.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1634)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1698)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms | Allocations: 2711)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1> Students matched with <%= @student.name %> </h1>
+    2: 
+    3: <ul>
+    4:     <% @tutor.students.each  do |student| %>
+  
+app/views/tutors/mystudents.html.erb:1
+Started GET "/tutors/5/mystudents" for 127.0.0.1 at 2021-01-06 21:39:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tutors/5/mystudents"):
+  
+Started GET "/tutors/5/students" for 127.0.0.1 at 2021-01-06 21:39:45 -0500
+Processing by TutorsController#mystudents as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:11:in `mystudents'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/mystudents.html.erb within layouts/application
+  Rendered tutors/mystudents.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1464)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1528)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 2416)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1> Students matched with <%= @student.name %> </h1>
+    2: 
+    3: <ul>
+    4:     <% @tutor.students.each  do |student| %>
+  
+app/views/tutors/mystudents.html.erb:1
+Started GET "/tutors/5/students" for 127.0.0.1 at 2021-01-06 21:40:31 -0500
+Processing by TutorsController#mystudents as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.7ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:11:in `mystudents'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/mystudents.html.erb within layouts/application
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "matchings" ON "students"."id" = "matchings"."student_id" WHERE "matchings"."tutor_id" = ?[0m  [["tutor_id", 5]]
+  ↳ app/views/tutors/mystudents.html.erb:4
+  Rendered tutors/mystudents.html.erb within layouts/application (Duration: 68.6ms | Allocations: 14948)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 95.4ms | Allocations: 18663)
+Completed 200 OK in 108ms (Views: 97.2ms | ActiveRecord: 3.2ms | Allocations: 20299)
+
+

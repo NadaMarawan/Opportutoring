@@ -7,6 +7,10 @@ class TutorsController < ApplicationController
     @tutors = Tutor.all
   end
 
+  def mystudents
+    @tutor = Tutor.find(params[:id])
+  end
+
   #This action will render app/views/tutors/new.html.erb
   def new
     #initialize but not save an empty tutor; so that the form we renders knows which fields to use and where to submit
