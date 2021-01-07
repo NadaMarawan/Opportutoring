@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   #resources :students
 
   # UI mockup page: my-tutors
-  get "/students/:id/tutors", to: "students#indexMyTutors"
+  get "/students/:id/tutors", to: "students#mytutors"
 
   # UI mockup page: signup-tutor
   get "/tutors/new", to: "tutors#new"

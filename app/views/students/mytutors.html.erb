@@ -1,0 +1,9 @@
+<h1> Tutors matched with <%= @student.name %> </h1>
+
+<ul>
+    <% @student.tutors.each  do |tutor| %>
+    <li><b> <%= tutor.name %> </b></li>
+        <p> <%= tutor.email %> </p>
+    <% end %>
+</ul>
+    

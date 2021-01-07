@@ -7,8 +7,9 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
-  def indexMyTutors
-    #@mytutors = Tutor
+  def mytutors
+    @student = Student.find(params[:id])
+    #@mytutors = .tutors
   end
 
   #This action will render app/views/students/new.html.erb
