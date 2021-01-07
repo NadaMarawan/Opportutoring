@@ -7,6 +7,10 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def indexMyTutors
+    #@mytutors = Tutor
+  end
+
   #This action will render app/views/students/new.html.erb
   def new
     #initialize but not save an empty student; so that the form we renders knows which fields to use and where to submit

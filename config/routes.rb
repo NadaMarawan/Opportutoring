@@ -9,18 +9,23 @@ Rails.application.routes.draw do
   post "/students", to: "students#create"
   #resources :students
 
-  # UI mockup page: all-students
-  get "/students", to: "students#index"
-
   # UI mockup page: my-tutors
-  #get '/students/:id/tutors'
+  get "/students/:id/tutors", to: "students#indexMyTutors"
 
   # UI mockup page: signup-tutor
   get "/tutors/new", to: "tutors#new"
   get "/tutors/:id", to: "tutors#show"
   post "/tutors", to: "tutors#create"
-  #resources :students
+  #resources :tutors
+
+  # UI mockup page: all-students
+  get "/students", to: "students#index"
 
   # UI mockup page: all-tutors
   get "/tutors", to: "tutors#index"
+
+  # Matchings (for UI mockup pages my-students and my-tutors)
+  get "/matchings/new", to: "matchings#new"
+  get "/matchings/:id", to: "matchings#show"
+  post "/matchings", to: "matchings#create"
 end
