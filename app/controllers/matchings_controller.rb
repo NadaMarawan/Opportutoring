@@ -3,9 +3,9 @@ class MatchingsController < ApplicationController
     @matching = Matching.find(params[:id])
   end
 
-  #def index
-  #@matchings = matching.all
-  #end
+  def index
+    @matchings = Matching.all
+  end
 
   def new
     #initialize but not save an empty matching; so that the form we renders knows which fields to use and where to submit

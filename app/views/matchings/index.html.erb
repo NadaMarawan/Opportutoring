@@ -1,0 +1,9 @@
+<h1>Current matchings</h1>
+
+<ul>
+    <% @matchings.each do |matching| %>
+    <li><b> <%= matching.id%> </b></li>
+        <p> <u>Tutor</u>: <%= matching.tutor.name %></p>
+        <p> <u>Student</u>: <%= matching.student.name %> </p>
+    <% end %>
+</ul>
