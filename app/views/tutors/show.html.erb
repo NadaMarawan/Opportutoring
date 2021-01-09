@@ -1,2 +1,9 @@
 <h1>New Tutor Created</h1>
-<p><%= @tutor.name %></p>
+
+<% if @tutor.image.attached? %>
+  <img src="<%= (url_for(@tutor.image)) %>">
+<% end %>
+
+<p><u>Name</u>: <%= @tutor.name %></p>
+<p><u>Email</u>: <%= @tutor.email %></p>
+<p><u>Country of Residence</u>: <%= @tutor.country %></p>

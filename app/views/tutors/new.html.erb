@@ -4,27 +4,33 @@
 
 <%= form_with model: @tutor do |form| %>
   <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <p><b>Preferred <%= form.label :name %><br></b></p>
+    <%= form.text_field :name, placeholder: 'Enter your name here'%>
   </div>
 
   <div>
-    <%= form.label :password %><br>
-    <%= form.text_field :password %>
+    <p><b><%= form.label :password %><br></b></p>
+    <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
   </div>
 
   <div>
-    <%= form.label :country %><br>
-    <%= form.text_field :country %>
+    <p><b><%= form.label :country %> of Residence<br></b></p>
+    <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
   </div>
 
   <div>
-    <%= form.label :email %><br>
-    <%= form.text_field :email %>
+    <p><b><%= form.label :email %><br></b></p>
+    <%= form.text_field :email, placeholder: 'Enter your email here' %>
   </div>
-  <!--  profile picture--> 
 
   <div>
-    <%= form.submit %>
+    <p><b><%= form.label :image %> (optional)<br></b></p>
+    <%= form.file_field :image %>
   </div>
+
+  <div>
+    <p><%= form.submit %></p>
+  </div>
+
 <% end %>
+

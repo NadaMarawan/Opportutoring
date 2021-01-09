@@ -6249,3 +6249,104 @@ Processing by StudentsController#new as HTML
 Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.0ms | Allocations: 6729)
 
 
+Started GET "/tutors/new" for ::1 at 2021-01-09 18:15:10 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 23.4ms | Allocations: 3518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.6ms | Allocations: 9871)
+Completed 200 OK in 85ms (Views: 62.1ms | ActiveRecord: 0.7ms | Allocations: 19040)
+
+
+Started POST "/tutors" for ::1 at 2021-01-09 18:15:48 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"dina", "password"=>"[FILTERED]", "country"=>"Egypt", "email"=>"koko@mail.mcgill", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fd46d4e4460 @tempfile=#<Tempfile:/var/folders/05/dcr6lklj6bg0cr7jb6l4sl_40000gn/T/RackMultipart20210109-40939-w0ct5j.jpg>, @original_filename="fifi.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"tutor[image]\"; filename=\"fifi.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Create (1.1ms)[0m  [1m[32mINSERT INTO "tutors" ("name", "password", "country", "created_at", "updated_at", "email") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "dina"], ["password", "ppp"], ["country", "Egypt"], ["created_at", "2021-01-09 23:15:48.397173"], ["updated_at", "2021-01-09 23:15:48.397173"], ["email", "koko@mail.mcgill"]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "gsyznlyku3vqxo4qbsrboc8naysc"], ["filename", "fifi.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 76146], ["checksum", "r1HYdAsONDaaGeADSKjOXA=="], ["created_at", "2021-01-09 23:15:48.434268"]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "image"], ["record_type", "Tutor"], ["record_id", 6], ["blob_id", 2], ["created_at", "2021-01-09 23:15:48.439198"]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Update (1.0ms)[0m  [1m[33mUPDATE "tutors" SET "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["updated_at", "2021-01-09 23:15:48.442967"], ["id", 6]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+[36m  Disk Storage (3.4ms) [0m[32mUploaded file to key: gsyznlyku3vqxo4qbsrboc8naysc (checksum: r1HYdAsONDaaGeADSKjOXA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 87606d59-9b9e-4438-b5ef-9f82d8f01fd2) to Async(default) with arguments: #<GlobalID:0x00007fd46d465a98 @uri=#<URI::GID gid://opp/ActiveStorage::Blob/2>>
+Redirected to http://localhost:3000/tutors/6
+Completed 302 Found in 118ms (ActiveRecord: 5.7ms | Allocations: 44606)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87606d59-9b9e-4438-b5ef-9f82d8f01fd2] Performing ActiveStorage::AnalyzeJob (Job ID: 87606d59-9b9e-4438-b5ef-9f82d8f01fd2) from Async(default) enqueued at 2021-01-09T23:15:48Z with arguments: #<GlobalID:0x00007fd46d43f5f0 @uri=#<URI::GID gid://opp/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87606d59-9b9e-4438-b5ef-9f82d8f01fd2] [36m  Disk Storage (0.3ms) [0m[34mDownloaded file from key: gsyznlyku3vqxo4qbsrboc8naysc[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87606d59-9b9e-4438-b5ef-9f82d8f01fd2] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87606d59-9b9e-4438-b5ef-9f82d8f01fd2]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87606d59-9b9e-4438-b5ef-9f82d8f01fd2]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87606d59-9b9e-4438-b5ef-9f82d8f01fd2]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [87606d59-9b9e-4438-b5ef-9f82d8f01fd2] Performed ActiveStorage::AnalyzeJob (Job ID: 87606d59-9b9e-4438-b5ef-9f82d8f01fd2) from Async(default) in 10.68ms
+Started GET "/tutors/6" for ::1 at 2021-01-09 18:15:48 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  Rendered tutors/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3771)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 4942)
+
+
+Started GET "/tutors/6" for ::1 at 2021-01-09 18:17:07 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:4
+  Rendered tutors/show.html.erb within layouts/application (Duration: 14.6ms | Allocations: 2467)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 6264)
+Completed 200 OK in 43ms (Views: 37.0ms | ActiveRecord: 0.8ms | Allocations: 7892)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ceea7049dc02093145f62e25cd6bf86667a49efa/fifi.jpg" for ::1 at 2021-01-09 18:17:07 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ceea7049dc02093145f62e25cd6bf86667a49efa", "filename"=>"fifi"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: gsyznlyku3vqxo4qbsrboc8naysc (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaM041ZW01c2VXdDFNM1p4ZUc4MGNXSnpjbUp2WXpodVlYbHpZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFpta3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbWFXWnBMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjEtMDEtMDlUMjM6MjI6MDcuNzU0WiIsInB1ciI6ImJsb2Jfa2V5In19--c18a645e3bc0dc654f9efd5656361b004edf1c16/fifi.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaM041ZW01c2VXdDFNM1p4ZUc4MGNXSnpjbUp2WXpodVlYbHpZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFpta3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbWFXWnBMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjEtMDEtMDlUMjM6MjI6MDcuNzU0WiIsInB1ciI6ImJsb2Jfa2V5In19--c18a645e3bc0dc654f9efd5656361b004edf1c16/fifi.jpg
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms | Allocations: 1715)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaM041ZW01c2VXdDFNM1p4ZUc4MGNXSnpjbUp2WXpodVlYbHpZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFpta3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbWFXWnBMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjEtMDEtMDlUMjM6MjI6MDcuNzU0WiIsInB1ciI6ImJsb2Jfa2V5In19--c18a645e3bc0dc654f9efd5656361b004edf1c16/fifi.jpg" for ::1 at 2021-01-09 18:17:07 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"fifi"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/tutors/new" for ::1 at 2021-01-09 18:17:36 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1561)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 5186)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 5714)
+
+
