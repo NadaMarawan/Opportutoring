@@ -3,4 +3,5 @@ class Student < ApplicationRecord
 
   has_many :matchings
   has_many :tutors, through: :matchings
+  has_one_attached :image
 end

@@ -42,6 +42,6 @@ class StudentsController < ApplicationController
   # permit some attributes to be used in the returned hash (whitelist)
   # if checks are passed, returns a hash that is used here to create or update a student object
   def student_params
-    params.require(:student).permit(:name, :password, :country, :level, :email)
+    params.require(:student).permit(:name, :password, :country, :level, :email, :image)
   end
 end

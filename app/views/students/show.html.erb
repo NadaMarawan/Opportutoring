@@ -1,2 +1,12 @@
 <h1>New Student Created</h1>
-<p><%= @student.name %></p>
+
+<% if @student.image.attached? %>
+  <img src="<%= (url_for(@student.image)) %>">
+<% end %>
+
+<p><u>Name</u>: <%= @student.name %></p>
+<p><u>Email</u>: <%= @student.email %></p>
+<p><u>English Level</u>: <%= @student.level %></p>
+<p><u>Country of Residence</u>: <%= @student.country %></p>
+
+
