@@ -7735,3 +7735,1796 @@ Processing by TutorsController#create as HTML
 Completed 200 OK in 27ms (Views: 14.7ms | ActiveRecord: 0.5ms | Allocations: 10916)
 
 
+Started GET "/tutors" for ::1 at 2021-01-09 20:16:26 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 5206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.8ms | Allocations: 11667)
+Completed 200 OK in 76ms (Views: 54.1ms | ActiveRecord: 1.3ms | Allocations: 17730)
+
+
+Started GET "/tutors" for ::1 at 2021-01-09 20:17:06 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 22.8ms | Allocations: 6462)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 6527)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.2ms | Allocations: 7610)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x00000000008ca0>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, tutor%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for ::1 at 2021-01-09 20:17:22 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 24.5ms | Allocations: 5024)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 5089)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.2ms | Allocations: 6281)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tutor_path' for #<ActionView::Base:0x00000000009150>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, tutor_path%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for ::1 at 2021-01-09 20:17:30 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 902)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 4848)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 0.2ms | Allocations: 5969)
+
+
+Started GET "/tutors" for ::1 at 2021-01-09 20:17:31 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4388)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.3ms | Allocations: 4791)
+
+
+Started GET "/tutors" for ::1 at 2021-01-09 20:17:33 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 4359)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.2ms | Allocations: 4749)
+
+
+Started GET "/tutors" for ::1 at 2021-01-09 20:17:34 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 4360)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.2ms | Allocations: 4750)
+
+
+Started GET "/tutors" for ::1 at 2021-01-09 20:21:24 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1404)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 5201)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms | Allocations: 6300)
+
+
+Started GET "/tutors" for ::1 at 2021-01-09 20:21:26 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 831)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4453)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.1ms | Allocations: 4844)
+
+
+Started GET "/tutors" for ::1 at 2021-01-09 20:21:27 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (3.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 824)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 4446)
+Completed 200 OK in 23ms (Views: 18.5ms | ActiveRecord: 3.1ms | Allocations: 4836)
+
+
+Started GET "/tutors" for ::1 at 2021-01-09 20:24:38 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 4845)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4909)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms | Allocations: 5975)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `object' for #<ActionView::Base:0x00000000009948>
+Did you mean?  object_id):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, polymorphic_path([:show, @tutor, object])%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for ::1 at 2021-01-09 20:24:53 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 49.7ms | Allocations: 5287)
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 5351)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.3ms | Allocations: 6422)
+
+
+  
+ActionView::Template::Error (undefined method `to_model' for 20160:Integer
+Did you mean?  to_yaml):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, polymorphic_path([:show, @tutor, object_id])%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for ::1 at 2021-01-09 20:26:00 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 3947)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4011)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms | Allocations: 5082)
+
+
+  
+ActionView::Template::Error (undefined method `show_path' for #<ActionView::Base:0x0000000000a208>):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, polymorphic_path([:show, @tutor])%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for ::1 at 2021-01-09 20:26:15 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 4834)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 4898)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms | Allocations: 5969)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `show_path' for #<ActionView::Base:0x0000000000a668>):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, polymorphic_path([show_path, @tutor])%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for ::1 at 2021-01-09 20:26:23 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 33.0ms | Allocations: 3931)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 3995)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.3ms | Allocations: 5066)
+
+
+  
+ActionView::Template::Error (undefined method `show_path_path' for #<ActionView::Base:0x0000000000aaa0>):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, polymorphic_path([:show_path, @tutor])%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:27:28 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 4023)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 4087)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms | Allocations: 5158)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x0000000000af50>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, url_for(tutor)%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:27:52 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 958)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 4768)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.4ms | Allocations: 5867)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:27:54 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 827)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 4449)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.1ms | Allocations: 4840)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:27:55 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 821)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4443)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.2ms | Allocations: 4833)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:27:56 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 822)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 4444)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.2ms | Allocations: 4834)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:27:57 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 822)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4444)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 4834)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:27:57 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 821)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 4453)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.2ms | Allocations: 4844)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:29:41 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 20.2ms | Allocations: 4454)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 8154)
+Completed 200 OK in 58ms (Views: 36.3ms | ActiveRecord: 1.3ms | Allocations: 12151)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:29:51 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2303)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2367)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 3440)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, "/tutors/#{@tutor.id}"%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:30:48 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  Rendered tutors/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1123)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1188)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2260)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Tutors</h1>
+
+<ul>
+  <% @tutors.each do |tutor| %>
+    <li>
+      <%= link_to tutor.name, :action => :show, :id => @tutor.id"%>
+    </li>
+  <% end %>
+</ul>
+):
+1:    <h1>Tutors</h1>
+2:    
+3:    <ul>
+4:      <% @tutors.each do |tutor| %>
+5:        <li>
+6:          <%= link_to tutor.name, :action => :show, :id => @tutor.id"%>
+7:        </li>
+8:      <% end %>
+9:    </ul>
+  
+app/views/tutors/index.html.erb:6: syntax error, unexpected string literal, expecting ')'
+app/views/tutors/index.html.erb:11: unterminated string meets end of file
+app/views/tutors/index.html.erb:11: syntax error, unexpected end-of-input, expecting ')'
+app/views/tutors/index.html.erb:6: syntax error, unexpected string literal, expecting ')'
+app/views/tutors/index.html.erb:11: unterminated string meets end of file
+app/views/tutors/index.html.erb:11: syntax error, unexpected end-of-input, expecting ')'
+app/views/tutors/index.html.erb:6: syntax error, unexpected string literal, expecting ')'
+app/views/tutors/index.html.erb:11: unterminated string meets end of file
+app/views/tutors/index.html.erb:11: syntax error, unexpected end-of-input, expecting ')'
+app/views/tutors/index.html.erb:6: syntax error, unexpected string literal, expecting ')'
+app/views/tutors/index.html.erb:11: unterminated string meets end of file
+app/views/tutors/index.html.erb:11: syntax error, unexpected end-of-input, expecting ')'
+app/views/tutors/index.html.erb:6: syntax error, unexpected string literal, expecting ')'
+app/views/tutors/index.html.erb:11: unterminated string meets end of file
+app/views/tutors/index.html.erb:11: syntax error, unexpected end-of-input, expecting ')'
+app/views/tutors/index.html.erb:6: syntax error, unexpected string literal, expecting ')'
+app/views/tutors/index.html.erb:11: unterminated string meets end of file
+app/views/tutors/index.html.erb:11: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:31:06 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2298)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2362)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms | Allocations: 3433)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, :action => :show, :id => @tutor.id%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:31:17 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1910)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 1974)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms | Allocations: 3045)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"tutors", :id=>nil}):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, :action => :show, :id => @tutor%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:31:19 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1753)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 1817)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 2177)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"tutors", :id=>nil}):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, :action => :show, :id => @tutor%>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:31:52 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2269)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2333)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms | Allocations: 3404)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, :action => :show, :email => @tutor.email %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:33:14 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 847)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 4657)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.1ms | Allocations: 5757)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-09 20:33:15 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4605)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 8193)
+Completed 200 OK in 36ms (Views: 19.2ms | ActiveRecord: 2.6ms | Allocations: 11308)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:33:29 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 847)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 4643)
+Completed 200 OK in 27ms (Views: 22.3ms | ActiveRecord: 0.2ms | Allocations: 5737)
+
+
+Started GET "/tutors/" for 127.0.0.1 at 2021-01-09 20:33:30 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 713)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 4956)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.2ms | Allocations: 5348)
+
+
+Started GET "/tutors/" for 127.0.0.1 at 2021-01-09 20:33:32 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4344)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.1ms | Allocations: 4731)
+
+
+Started GET "/tutors/" for 127.0.0.1 at 2021-01-09 20:33:33 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 4344)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.2ms | Allocations: 4735)
+
+
+Started GET "/tutors/" for 127.0.0.1 at 2021-01-09 20:33:35 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4334)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms | Allocations: 4724)
+
+
+Started GET "/tutors/" for 127.0.0.1 at 2021-01-09 20:33:42 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 853)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4649)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.3ms | Allocations: 5748)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:33:43 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1166)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 5409)
+Completed 200 OK in 44ms (Views: 34.1ms | ActiveRecord: 0.5ms | Allocations: 6454)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:33:46 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 4629)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.4ms | Allocations: 5549)
+
+
+Started GET "/tutors/" for 127.0.0.1 at 2021-01-09 20:34:44 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 965)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 4775)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.2ms | Allocations: 5875)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:34:45 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 5085)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.2ms | Allocations: 5477)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:34:47 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 823)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 4445)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.1ms | Allocations: 4835)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:35:55 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2302)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2366)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms | Allocations: 3437)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, "/tutors/#{@tutor.id}" %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:36:45 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1175)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 4986)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.5ms | Allocations: 6613)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:37:58 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 4662)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4726)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms | Allocations: 5807)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x0000000000ddb8>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, tutor_path(@tutor) %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:42:03 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 5228)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5292)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms | Allocations: 6891)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tutor' for #<ActionView::Base:0x0000000000e240>
+Did you mean?  @tutor):
+     7: <p><u>Name</u>: <%= @tutor.name %></p>
+     8: <p><u>Email</u>: <%= @tutor.email %></p>
+     9: <p><u>Country of Residence</u>: <%= @tutor.country %></p>
+    10: <%= link_to tutor.name, @tutor %>
+  
+app/views/tutors/show.html.erb:10
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:42:28 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 28.6ms | Allocations: 4347)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 4411)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.5ms | Allocations: 6010)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x0000000000e6f0>
+Did you mean?  tutors_path):
+     7: <p><u>Name</u>: <%= @tutor.name %></p>
+     8: <p><u>Email</u>: <%= @tutor.email %></p>
+     9: <p><u>Country of Residence</u>: <%= @tutor.country %></p>
+    10: <%= link_to @tutor.name, @tutor %>
+  
+app/views/tutors/show.html.erb:10
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:42:41 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.8ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1198)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 5008)
+Completed 200 OK in 46ms (Views: 34.6ms | ActiveRecord: 1.3ms | Allocations: 6635)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:42:44 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.8ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 4699)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 5208)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms | Allocations: 5695)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x0000000000ec68>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, tutor_path(@tutor) %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:42:59 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2265)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2329)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 3400)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to @tutor.name, tutor_path(@tutor) %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:43:19 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 22.0ms | Allocations: 4665)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 4729)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.5ms | Allocations: 5800)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x0000000000f500>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to "hi", tutor_path(@tutor) %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:43:26 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 915)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 4725)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.4ms | Allocations: 5825)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:43:28 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 781)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 4413)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.2ms | Allocations: 4804)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:43:29 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 4399)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.2ms | Allocations: 4789)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:43:30 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 4399)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms | Allocations: 4789)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:43:30 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 777)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 4399)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.2ms | Allocations: 4790)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:43:48 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 4026)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 4090)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.2ms | Allocations: 5161)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x0000000000fb40>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, tutor %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:44:02 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 924)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 4734)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.1ms | Allocations: 5834)
+
+
+Started GET "/tutors.5" for 127.0.0.1 at 2021-01-09 20:44:04 -0500
+Processing by TutorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4411)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.3ms | Allocations: 4942)
+
+
+Started GET "/tutors.5" for 127.0.0.1 at 2021-01-09 20:44:14 -0500
+Processing by TutorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 921)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 4717)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.3ms | Allocations: 5854)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:44:17 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 4411)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.3ms | Allocations: 4897)
+
+
+Started GET "/tutors.6" for 127.0.0.1 at 2021-01-09 20:44:18 -0500
+Processing by TutorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 785)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4407)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.2ms | Allocations: 4796)
+
+
+Started GET "/tutors.6" for 127.0.0.1 at 2021-01-09 20:44:37 -0500
+Processing by TutorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 4663)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 4727)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.2ms | Allocations: 5838)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x00000000010220>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, tutor_path(tutor.id) %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors.6" for 127.0.0.1 at 2021-01-09 20:44:47 -0500
+Processing by TutorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2799)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 2863)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms | Allocations: 3979)
+
+
+  
+ActionView::Template::Error (undefined method `to_model' for 5:Integer
+Did you mean?  to_yaml):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, tutor.id %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors.6" for 127.0.0.1 at 2021-01-09 20:44:56 -0500
+Processing by TutorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4020)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 4084)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.3ms | Allocations: 5200)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x00000000010ab8>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, tutor %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors.6" for 127.0.0.1 at 2021-01-09 20:46:27 -0500
+Processing by TutorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 4664)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 4728)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms | Allocations: 5844)
+
+
+  
+ActionView::Template::Error (undefined method `tutor_path' for #<ActionView::Base:0x00000000010f68>
+Did you mean?  tutors_path):
+    3: <ul>
+    4:   <% @tutors.each do |tutor| %>
+    5:     <li>
+    6:       <%= link_to tutor.name, tutor_path(tutor) %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tutors/index.html.erb:6
+app/views/tutors/index.html.erb:4
+Started GET "/tutors.6" for 127.0.0.1 at 2021-01-09 20:47:14 -0500
+Processing by TutorsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/tutors/index.html.erb:4
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 4832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 8622)
+Completed 200 OK in 31ms (Views: 24.4ms | ActiveRecord: 2.0ms | Allocations: 11070)
+
+
+Started GET "/tutors/6" for 127.0.0.1 at 2021-01-09 20:47:18 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:4
+  Rendered tutors/show.html.erb within layouts/application (Duration: 67.5ms | Allocations: 30211)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 74.0ms | Allocations: 33753)
+Completed 200 OK in 80ms (Views: 72.2ms | ActiveRecord: 2.7ms | Allocations: 34911)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ceea7049dc02093145f62e25cd6bf86667a49efa/fifi.jpg" for 127.0.0.1 at 2021-01-09 20:47:18 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ceea7049dc02093145f62e25cd6bf86667a49efa", "filename"=>"fifi"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (7.8ms) [0m[34mGenerated URL for file at key: gsyznlyku3vqxo4qbsrboc8naysc (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaM041ZW01c2VXdDFNM1p4ZUc4MGNXSnpjbUp2WXpodVlYbHpZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFpta3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbWFXWnBMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjEtMDEtMTBUMDE6NTI6MTguMjM5WiIsInB1ciI6ImJsb2Jfa2V5In19--2b40b197b76546068361f12f1ffa74e533b1b3ea/fifi.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaM041ZW01c2VXdDFNM1p4ZUc4MGNXSnpjbUp2WXpodVlYbHpZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFpta3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbWFXWnBMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjEtMDEtMTBUMDE6NTI6MTguMjM5WiIsInB1ciI6ImJsb2Jfa2V5In19--2b40b197b76546068361f12f1ffa74e533b1b3ea/fifi.jpg
+Completed 302 Found in 18ms (ActiveRecord: 0.1ms | Allocations: 3396)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaM041ZW01c2VXdDFNM1p4ZUc4MGNXSnpjbUp2WXpodVlYbHpZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFpta3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbWFXWnBMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjEtMDEtMTBUMDE6NTI6MTguMjM5WiIsInB1ciI6ImJsb2Jfa2V5In19--2b40b197b76546068361f12f1ffa74e533b1b3ea/fifi.jpg" for 127.0.0.1 at 2021-01-09 20:47:18 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"fifi"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:47:50 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 743)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 4365)
+Completed 200 OK in 37ms (Views: 31.4ms | ActiveRecord: 0.5ms | Allocations: 4852)
+
+
+Started GET "/tutors/6" for 127.0.0.1 at 2021-01-09 20:47:51 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:4
+  Rendered tutors/show.html.erb within layouts/application (Duration: 14.4ms | Allocations: 2043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 5798)
+Completed 200 OK in 46ms (Views: 39.8ms | ActiveRecord: 0.6ms | Allocations: 7178)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaM041ZW01c2VXdDFNM1p4ZUc4MGNXSnpjbUp2WXpodVlYbHpZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFpta3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbWFXWnBMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjEtMDEtMTBUMDE6NTI6MTguMjM5WiIsInB1ciI6ImJsb2Jfa2V5In19--2b40b197b76546068361f12f1ffa74e533b1b3ea/fifi.jpg" for 127.0.0.1 at 2021-01-09 20:47:51 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"fifi"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 295)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:47:54 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 743)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4375)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.2ms | Allocations: 4762)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:47:55 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1056)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 5264)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 0.5ms | Allocations: 6183)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:48:21 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1470)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 5266)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.2ms | Allocations: 6365)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:48:23 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4452)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.1ms | Allocations: 4843)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:48:24 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 823)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 4445)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.2ms | Allocations: 4836)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:48:24 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 823)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 4445)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.1ms | Allocations: 4835)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-09 20:48:32 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 880)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4676)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.4ms | Allocations: 5770)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:48:33 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1722)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 5439)
+Completed 200 OK in 35ms (Views: 28.5ms | ActiveRecord: 0.3ms | Allocations: 6484)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:50:45 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2984)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 6694)
+Completed 200 OK in 48ms (Views: 24.3ms | ActiveRecord: 3.7ms | Allocations: 14312)
+
+
+Started GET "/tutors/5/students" for 127.0.0.1 at 2021-01-09 20:50:48 -0500
+Processing by TutorsController#mystudents as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:11:in `mystudents'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/mystudents.html.erb within layouts/application
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "matchings" ON "students"."id" = "matchings"."student_id" WHERE "matchings"."tutor_id" = ?[0m  [["tutor_id", 5]]
+  ↳ app/views/tutors/mystudents.html.erb:4
+  Rendered tutors/mystudents.html.erb within layouts/application (Duration: 53.6ms | Allocations: 12195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 64.2ms | Allocations: 15733)
+Completed 200 OK in 70ms (Views: 62.0ms | ActiveRecord: 3.5ms | Allocations: 16776)
+
+
+Started GET "/students/30" for 127.0.0.1 at 2021-01-09 20:50:50 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1854)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 5386)
+Completed 200 OK in 26ms (Views: 18.3ms | ActiveRecord: 0.5ms | Allocations: 7428)
+
+
+Started GET "/students/30" for 127.0.0.1 at 2021-01-09 20:50:52 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 4628)
+Completed 200 OK in 32ms (Views: 26.2ms | ActiveRecord: 1.2ms | Allocations: 5548)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-09 20:51:28 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1200)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 4996)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.4ms | Allocations: 6092)
+
+
+Started GET "/students/36" for 127.0.0.1 at 2021-01-09 20:51:30 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 36], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1240)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 5415)
+Completed 200 OK in 26ms (Views: 20.9ms | ActiveRecord: 0.4ms | Allocations: 6460)
+
+
+Started GET "/students/32" for 127.0.0.1 at 2021-01-09 20:51:32 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 32], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:4
+  Rendered students/show.html.erb within layouts/application (Duration: 54.3ms | Allocations: 14970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 61.5ms | Allocations: 18931)
+Completed 200 OK in 71ms (Views: 58.3ms | ActiveRecord: 4.4ms | Allocations: 19876)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c24525e477d9cd32142890b948548a255f559fd/fifi5.jpg" for 127.0.0.1 at 2021-01-09 20:51:33 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c24525e477d9cd32142890b948548a255f559fd", "filename"=>"fifi5"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: 86e8k2owd0mjfnio71txwny79pc5 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPRFpsT0dzeWIzZGtNRzFxWm01cGJ6Y3hkSGgzYm5rM09YQmpOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazFMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblptbG1hVFV1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTAxLTEwVDAxOjU2OjMzLjA4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3e95eaeb16b95c3d7a7a85f11e995d2674ebbe96/fifi5.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPRFpsT0dzeWIzZGtNRzFxWm01cGJ6Y3hkSGgzYm5rM09YQmpOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazFMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblptbG1hVFV1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTAxLTEwVDAxOjU2OjMzLjA4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3e95eaeb16b95c3d7a7a85f11e995d2674ebbe96/fifi5.jpg
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 2543)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPRFpsT0dzeWIzZGtNRzFxWm01cGJ6Y3hkSGgzYm5rM09YQmpOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazFMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblptbG1hVFV1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTAxLTEwVDAxOjU2OjMzLjA4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3e95eaeb16b95c3d7a7a85f11e995d2674ebbe96/fifi5.jpg" for 127.0.0.1 at 2021-01-09 20:51:33 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"fifi5"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 335)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPRFpsT0dzeWIzZGtNRzFxWm01cGJ6Y3hkSGgzYm5rM09YQmpOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazFMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblptbG1hVFV1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTAxLTEwVDAxOjU2OjMzLjA4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3e95eaeb16b95c3d7a7a85f11e995d2674ebbe96/fifi5.jpg" for 127.0.0.1 at 2021-01-09 20:51:36 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"fifi5"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 295)
+
+
+Started GET "/students/4/mytutors" for 127.0.0.1 at 2021-01-09 20:52:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/students/4/mytutors"):
+  
+Started GET "/students/4/mytutors" for 127.0.0.1 at 2021-01-09 20:52:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/students/4/mytutors"):
+  
+Started GET "/students/5/mytutors" for 127.0.0.1 at 2021-01-09 20:52:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/students/5/mytutors"):
+  
+Started GET "/matchings" for 127.0.0.1 at 2021-01-09 20:52:17 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.6ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  Rendered matchings/index.html.erb within layouts/application (Duration: 40.1ms | Allocations: 9804)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.0ms | Allocations: 13514)
+Completed 200 OK in 59ms (Views: 55.3ms | ActiveRecord: 2.0ms | Allocations: 14615)
+
+
+Started GET "/matchings" for 127.0.0.1 at 2021-01-09 20:53:25 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/matchings/index.html.erb:4
+  [1m[36mMatching Load (0.4ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 7002)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7066)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.9ms | Allocations: 8734)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Matching:0x00007feb400c6010>):
+    3: <ul>
+    4:     <% @matchings.each do |matching| %>
+    5:     <li><b> Matching <%= matching.id %> </b></li>
+    6:         <p> <u>Tutor</u>: <%= link_to matching.name, matching_path(matching) %> (email: <%= matching.tutor.email %>)</p>
+    7:         <p> <u>Student</u>: <%= matching.student.name %> (email: <%= matching.student.email %>)</p>
+    8:     <% end %>
+    9: </ul>
+  
+app/views/matchings/index.html.erb:6
+app/views/matchings/index.html.erb:4
+Started GET "/matchings" for 127.0.0.1 at 2021-01-09 20:54:44 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/matchings/index.html.erb:4
+  [1m[36mMatching Load (0.4ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  [1m[36mTutor Load (0.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:8
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:8
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:8
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:8
+  Rendered matchings/index.html.erb within layouts/application (Duration: 67.6ms | Allocations: 22059)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 79.3ms | Allocations: 25768)
+Completed 200 OK in 84ms (Views: 81.0ms | ActiveRecord: 4.4ms | Allocations: 27462)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:54:52 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3090)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 6638)
+Completed 200 OK in 33ms (Views: 25.9ms | ActiveRecord: 1.2ms | Allocations: 8660)
+
+
+Started GET "/matchings" for 127.0.0.1 at 2021-01-09 20:55:24 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.3ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mCACHE Student Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  [1m[36mCACHE Tutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  Rendered matchings/index.html.erb within layouts/application (Duration: 49.7ms | Allocations: 6994)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 67.2ms | Allocations: 10800)
+Completed 200 OK in 77ms (Views: 72.5ms | ActiveRecord: 1.1ms | Allocations: 11900)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:55:29 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1629)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 5391)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.4ms | Allocations: 6806)
+
+
+Started GET "/students/30" for 127.0.0.1 at 2021-01-09 20:55:34 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1810)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 5339)
+Completed 200 OK in 21ms (Views: 15.3ms | ActiveRecord: 0.5ms | Allocations: 6891)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:55:50 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.3ms | Allocations: 5262)
+Completed 200 OK in 48ms (Views: 44.4ms | ActiveRecord: 0.3ms | Allocations: 6183)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:56:37 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1175)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 4972)
+Completed 200 OK in 56ms (Views: 47.0ms | ActiveRecord: 0.5ms | Allocations: 6595)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:56:55 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1158)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 4955)
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 6578)
+
+
+Started GET "/tutors/5/students" for 127.0.0.1 at 2021-01-09 20:57:03 -0500
+Processing by TutorsController#mystudents as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:11:in `mystudents'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/mystudents.html.erb within layouts/application
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "matchings" ON "students"."id" = "matchings"."student_id" WHERE "matchings"."tutor_id" = ?[0m  [["tutor_id", 5]]
+  ↳ app/views/tutors/mystudents.html.erb:4
+  Rendered tutors/mystudents.html.erb within layouts/application (Duration: 10.7ms | Allocations: 3154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 6682)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.9ms | Allocations: 7724)
+
+
+Started GET "/students/30" for 127.0.0.1 at 2021-01-09 20:57:09 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 5425)
+Completed 200 OK in 29ms (Views: 22.7ms | ActiveRecord: 0.5ms | Allocations: 6830)
+
+
+Started GET "/matchings" for 127.0.0.1 at 2021-01-09 20:57:24 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.3ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  [1m[36mCACHE Tutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mCACHE Student Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  [1m[36mCACHE Tutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:6
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:7
+  Rendered matchings/index.html.erb within layouts/application (Duration: 32.2ms | Allocations: 6988)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 10623)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.9ms | Allocations: 11506)
+
+
+Started GET "/students/30" for 127.0.0.1 at 2021-01-09 20:57:26 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1093)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4736)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 5680)
+
+
+Started GET "/students/30" for 127.0.0.1 at 2021-01-09 20:57:44 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1196)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 5616)
+Completed 200 OK in 38ms (Views: 31.7ms | ActiveRecord: 0.3ms | Allocations: 7252)
+
+
+Started GET "/students/30" for 127.0.0.1 at 2021-01-09 20:57:51 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1175)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 4972)
+Completed 200 OK in 40ms (Views: 30.1ms | ActiveRecord: 0.5ms | Allocations: 6595)
+
+
+Started GET "/students/30/mytutors" for 127.0.0.1 at 2021-01-09 20:57:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/students/30/mytutors"):
+  
+Started GET "/students/30/tutors" for 127.0.0.1 at 2021-01-09 20:58:04 -0500
+Processing by StudentsController#mytutors as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:11:in `mytutors'
+  Rendering layout layouts/application.html.erb
+  Rendering students/mytutors.html.erb within layouts/application
+  [1m[36mTutor Load (0.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" INNER JOIN "matchings" ON "tutors"."id" = "matchings"."tutor_id" WHERE "matchings"."student_id" = ?[0m  [["student_id", 30]]
+  ↳ app/views/students/mytutors.html.erb:4
+  Rendered students/mytutors.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2116)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 5644)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 0.8ms | Allocations: 6685)
+
+
+Started GET "/tutors/5" for 127.0.0.1 at 2021-01-09 20:58:07 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTutor Load (1.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1664)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 5382)
+Completed 200 OK in 32ms (Views: 26.0ms | ActiveRecord: 1.4ms | Allocations: 6820)
+
+

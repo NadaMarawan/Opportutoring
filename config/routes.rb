@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/students/new", to: "students#new"
   get "/students/:id", to: "students#show"
   post "/students", to: "students#create"
-  #resources :students
+  resources :students
 
   # UI mockup page: all-students
   get "/students", to: "students#index"
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get "/tutors/new", to: "tutors#new"
   get "/tutors/:id", to: "tutors#show"
   post "/tutors", to: "tutors#create"
-  #resources :tutors
+  resources :tutors
 
   # UI mockup page: all-tutors
   get "/tutors", to: "tutors#index"

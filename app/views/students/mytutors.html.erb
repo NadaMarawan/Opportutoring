@@ -2,7 +2,7 @@
 
 <ul>
     <% @student.tutors.each do |tutor| %>
-    <li><b> <%= tutor.name %> </b></li>
+    <li><b> <%= link_to tutor.name, tutor_path(tutor) %> </b></li>
         <p> <%= tutor.email %> </p>
     <% end %>
 </ul>
