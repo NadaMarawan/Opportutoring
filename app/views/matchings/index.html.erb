@@ -2,7 +2,7 @@
 
 <ul>
     <% @matchings.each do |matching| %>
-    <li><b> Matching <%= matching.id%> </b></li>
+    <li><b> Matching <%= matching.id %> </b></li>
         <p> <u>Tutor</u>: <%= matching.tutor.name %> (email: <%= matching.tutor.email %>)</p>
         <p> <u>Student</u>: <%= matching.student.name %> (email: <%= matching.student.email %>)</p>
     <% end %>

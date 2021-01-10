@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   post "/tutors", to: "tutors#create"
   #resources :tutors
 
-   # UI mockup page: all-tutors
-   get "/tutors", to: "tutors#index"
+  # UI mockup page: all-tutors
+  get "/tutors", to: "tutors#index"
 
   # UI mockup page: my-students
   get "/tutors/:id/students", to: "tutors#mystudents"

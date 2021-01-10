@@ -3,19 +3,31 @@
 <h1>New Student</h1>
 
 <%= form_with model: @student do |form| %>
+
+<% if @student.errors.any? %>
+          <div id="error_explanation">
+            <h3 style="color:red"><%= pluralize(@student.errors.count, "Error") %>:</h3>
+            <ul>
+              <% @student.errors.each do |error| %>
+                <li style="color:red"><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
   <div>
-    <p><b>Preferred <%= form.label :name %><br></b></p>
-    <%= form.text_field :name, placeholder: 'Enter your name here'%>
+    <p><b><%= form.label :name %><br></b></p>
+    <%= form.text_field :name, placeholder: "Enter your name here" %>     
   </div>
 
   <div>
     <p><b><%= form.label :password %><br></b></p>
-    <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+    <%= form.text_field :password, placeholder: "Enter your password here", type: "password", id: "password", size: "25x10" %>
   </div>
 
   <div>
     <p><b><%= form.label :country %> of Residence<br></b></p>
-    <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+    <%= form.text_field :country, placeholder: "Enter your country of residence here", size: "35x10" %>
   </div>
 
   <div>
@@ -25,7 +37,7 @@
 
   <div>
     <p><b><%= form.label :email %><br></b></p>
-    <%= form.text_field :email, placeholder: 'Enter your email here' %>
+    <%= form.text_field :email, placeholder: "Enter your email here" %>
   </div>
 
   <div>

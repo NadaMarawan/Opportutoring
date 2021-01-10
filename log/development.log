@@ -6350,3 +6350,1388 @@ Processing by TutorsController#new as HTML
 Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 5714)
 
 
+Started GET "/tutors/new" for ::1 at 2021-01-09 19:15:14 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 18.7ms | Allocations: 3456)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 66.4ms | Allocations: 9744)
+Completed 200 OK in 134ms (Views: 73.8ms | ActiveRecord: 1.3ms | Allocations: 18524)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:32:35 -0500
+Processing by StudentsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/students_controller.rb:17:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2166)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 5781)
+Completed 200 OK in 65ms (Views: 17.4ms | ActiveRecord: 1.6ms | Allocations: 13275)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:32:36 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1481)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 5102)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 5494)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:32:49 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Create (1.0ms)[0m  [1m[32mINSERT INTO "students" ("name", "password", "country", "level", "created_at", "updated_at", "email") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nada Marawan"], ["password", "oooooooooooooooooo"], ["country", "Canada"], ["level", 0], ["created_at", "2021-01-10 00:32:49.664760"], ["updated_at", "2021-01-10 00:32:49.664760"], ["email", "nada.marwan@mail.mcgill.ca"]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+Redirected to http://localhost:3000/students/39
+Completed 302 Found in 19ms (ActiveRecord: 4.3ms | Allocations: 3450)
+
+
+Started GET "/students/39" for ::1 at 2021-01-09 19:32:49 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 39], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 15.6ms | Allocations: 4433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 7976)
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 0.8ms | Allocations: 9437)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:32:56 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 5110)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 5513)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:33:07 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2118)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 5661)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 6720)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:33:35 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 5677)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 6742)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:33:38 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2072)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5617)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 6681)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:33:44 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("name", "password", "country", "level", "created_at", "updated_at", "email") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nada Marawan"], ["password", "0oooooooooo"], ["country", "Canada"], ["level", 0], ["created_at", "2021-01-10 00:33:44.631287"], ["updated_at", "2021-01-10 00:33:44.631287"], ["email", "nada.marwan@mail.mcgill.ca"]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+Redirected to http://localhost:3000/students/40
+Completed 302 Found in 15ms (ActiveRecord: 1.5ms | Allocations: 2584)
+
+
+Started GET "/students/40" for ::1 at 2021-01-09 19:33:44 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 40], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1008)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4645)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 5565)
+
+
+Started GET "/students" for ::1 at 2021-01-09 19:33:45 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1004)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 4630)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.3ms | Allocations: 5145)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:33:53 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 5122)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 5514)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:35:54 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/students_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2190)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 10471)
+Completed 200 OK in 49ms (Views: 24.8ms | ActiveRecord: 1.9ms | Allocations: 20582)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:41:57 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/students_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1580)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 1645)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.9ms | Allocations: 11759)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- <h1>Students#new</h1> -->
+<!-- <p>Find me in app/views/students/new.html.erb</p> -->
+<h1>New Student</h1>
+
+<%= form_with model: @student do |form| %>
+  <div>
+    <p><b>Preferred <%= form.label :name %><br></b></p>
+    <%= form.text_field :name, placeholder: 'Enter your name here'%>
+    <%= @student.errors.full_messages_for(:name).each do |message| %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :password %><br></b></p>
+    <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+  </div>
+
+  <div>
+    <p><b><%= form.label :country %> of Residence<br></b></p>
+    <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+  </div>
+
+  <div>
+    <p><b>English <%= form.label :level %><br></b></p>
+    <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+  </div> 
+
+  <div>
+    <p><b><%= form.label :email %><br></b></p>
+    <%= form.text_field :email, placeholder: 'Enter your email here' %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :image %> (optional)<br></b></p>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <p><%= form.submit %></p>
+  </div>
+
+<% end %>
+
+):
+1:    <!-- <h1>Students#new</h1> -->
+2:    <!-- <p>Find me in app/views/students/new.html.erb</p> -->
+3:    <h1>New Student</h1>
+4:    
+5:    <%= form_with model: @student do |form| %>
+6:      <div>
+7:        <p><b>Preferred <%= form.label :name %><br></b></p>
+8:        <%= form.text_field :name, placeholder: 'Enter your name here'%>
+9:        <%= @student.errors.full_messages_for(:name).each do |message| %>
+10:      </div>
+11:    
+12:      <div>
+13:        <p><b><%= form.label :password %><br></b></p>
+14:        <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+15:      </div>
+16:    
+17:      <div>
+18:        <p><b><%= form.label :country %> of Residence<br></b></p>
+19:        <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+20:      </div>
+21:    
+22:      <div>
+23:        <p><b>English <%= form.label :level %><br></b></p>
+24:        <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+25:      </div> 
+26:    
+27:      <div>
+28:        <p><b><%= form.label :email %><br></b></p>
+29:        <%= form.text_field :email, placeholder: 'Enter your email here' %>
+30:      </div>
+31:    
+32:      <div>
+33:        <p><b><%= form.label :image %> (optional)<br></b></p>
+34:        <%= form.file_field :image %>
+35:      </div>
+36:    
+37:      <div>
+38:        <p><%= form.submit %></p>
+39:      </div>
+40:    
+41:    <% end %>
+  
+app/views/students/new.html.erb:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:43: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/students_controller.rb:33:in `create'
+Started GET "/students" for ::1 at 2021-01-09 19:42:50 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1066)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 5007)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.6ms | Allocations: 6227)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:42:51 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2049)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 5673)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 6213)
+
+
+Started GET "/students" for ::1 at 2021-01-09 19:42:56 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4469)
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 4859)
+
+
+Started GET "/studentsnew" for ::1 at 2021-01-09 19:43:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/studentsnew"):
+  
+Started GET "/students/new" for ::1 at 2021-01-09 19:43:06 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1490)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 5125)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 5517)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:43:06 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1490)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 5111)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 5502)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:43:29 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3037)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 6594)
+Completed 200 OK in 28ms (Views: 15.3ms | ActiveRecord: 0.6ms | Allocations: 9912)
+
+
+Started GET "/students" for ::1 at 2021-01-09 19:43:44 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 967)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4764)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.2ms | Allocations: 5863)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:43:47 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1880)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 5502)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 6019)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:43:55 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1880)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 5675)
+Completed 200 OK in 39ms (Views: 33.8ms | ActiveRecord: 0.0ms | Allocations: 6776)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:44:06 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3032)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 6589)
+Completed 200 OK in 30ms (Views: 17.9ms | ActiveRecord: 0.6ms | Allocations: 9798)
+
+
+Started GET "/students" for ::1 at 2021-01-09 19:44:36 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 964)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 4766)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.3ms | Allocations: 5861)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:44:40 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1358)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1423)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1919)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- <h1>Students#new</h1> -->
+<!-- <p>Find me in app/views/students/new.html.erb</p> -->
+<h1>New Student</h1>
+
+<%= form_with model: @student do |form| %>
+  <div>
+    <p><b>Preferred <%= form.label :name %><br></b></p>
+    <%= form.text_field :name, placeholder: 'Enter your name here'%>
+    <%= @student.errors.full_messages_for(:name).each do |message| %>
+    
+    
+  </div>
+
+  <div>
+    <p><b><%= form.label :password %><br></b></p>
+    <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+  </div>
+
+  <div>
+    <p><b><%= form.label :country %> of Residence<br></b></p>
+    <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+  </div>
+
+  <div>
+    <p><b>English <%= form.label :level %><br></b></p>
+    <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+  </div> 
+
+  <div>
+    <p><b><%= form.label :email %><br></b></p>
+    <%= form.text_field :email, placeholder: 'Enter your email here' %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :image %> (optional)<br></b></p>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <p><%= form.submit %></p>
+  </div>
+
+<% end %>
+
+):
+1:    <!-- <h1>Students#new</h1> -->
+2:    <!-- <p>Find me in app/views/students/new.html.erb</p> -->
+3:    <h1>New Student</h1>
+4:    
+5:    <%= form_with model: @student do |form| %>
+6:      <div>
+7:        <p><b>Preferred <%= form.label :name %><br></b></p>
+8:        <%= form.text_field :name, placeholder: 'Enter your name here'%>
+9:        <%= @student.errors.full_messages_for(:name).each do |message| %>
+10:        
+11:        
+12:      </div>
+13:    
+14:      <div>
+15:        <p><b><%= form.label :password %><br></b></p>
+16:        <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+17:      </div>
+18:    
+19:      <div>
+20:        <p><b><%= form.label :country %> of Residence<br></b></p>
+21:        <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+22:      </div>
+23:    
+24:      <div>
+25:        <p><b>English <%= form.label :level %><br></b></p>
+26:        <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+27:      </div> 
+28:    
+29:      <div>
+30:        <p><b><%= form.label :email %><br></b></p>
+31:        <%= form.text_field :email, placeholder: 'Enter your email here' %>
+32:      </div>
+33:    
+34:      <div>
+35:        <p><b><%= form.label :image %> (optional)<br></b></p>
+36:        <%= form.file_field :image %>
+37:      </div>
+38:    
+39:      <div>
+40:        <p><%= form.submit %></p>
+41:      </div>
+42:    
+43:    <% end %>
+  
+app/views/students/new.html.erb:45: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:45: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:45: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:45: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:45: syntax error, unexpected end-of-input, expecting `end'
+app/views/students/new.html.erb:45: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/students/new" for ::1 at 2021-01-09 19:45:17 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1893)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 5702)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms | Allocations: 6806)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:45:29 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 12.0ms | Allocations: 1875)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 5670)
+Completed 200 OK in 46ms (Views: 41.5ms | ActiveRecord: 0.0ms | Allocations: 6768)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:46:40 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1878)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 5673)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 6772)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:46:53 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1880)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 5685)
+Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 6788)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:47:04 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1369)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1434)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 2505)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- <h1>Students#new</h1> -->
+<!-- <p>Find me in app/views/students/new.html.erb</p> -->
+<h1>New Student</h1>
+
+<%= form_with model: @student do |form| %>
+  <div>
+    <p><b>Preferred <%= form.label :name %><br></b></p>
+    <%= form.text_field :name, placeholder: 'Enter your name here'%>
+    <p>Error: <%= Error: @student.errors.full_messages_for(:name).each do |message| %></p>
+    <% end %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :password %><br></b></p>
+    <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+  </div>
+
+  <div>
+    <p><b><%= form.label :country %> of Residence<br></b></p>
+    <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+  </div>
+
+  <div>
+    <p><b>English <%= form.label :level %><br></b></p>
+    <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+  </div> 
+
+  <div>
+    <p><b><%= form.label :email %><br></b></p>
+    <%= form.text_field :email, placeholder: 'Enter your email here' %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :image %> (optional)<br></b></p>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <p><%= form.submit %></p>
+  </div>
+
+<% end %>
+
+):
+1:    <!-- <h1>Students#new</h1> -->
+2:    <!-- <p>Find me in app/views/students/new.html.erb</p> -->
+3:    <h1>New Student</h1>
+4:    
+5:    <%= form_with model: @student do |form| %>
+6:      <div>
+7:        <p><b>Preferred <%= form.label :name %><br></b></p>
+8:        <%= form.text_field :name, placeholder: 'Enter your name here'%>
+9:        <p>Error: <%= Error: @student.errors.full_messages_for(:name).each do |message| %></p>
+10:        <% end %>
+11:      </div>
+12:    
+13:      <div>
+14:        <p><b><%= form.label :password %><br></b></p>
+15:        <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+16:      </div>
+17:    
+18:      <div>
+19:        <p><b><%= form.label :country %> of Residence<br></b></p>
+20:        <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+21:      </div>
+22:    
+23:      <div>
+24:        <p><b>English <%= form.label :level %><br></b></p>
+25:        <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+26:      </div> 
+27:    
+28:      <div>
+29:        <p><b><%= form.label :email %><br></b></p>
+30:        <%= form.text_field :email, placeholder: 'Enter your email here' %>
+31:      </div>
+32:    
+33:      <div>
+34:        <p><b><%= form.label :image %> (optional)<br></b></p>
+35:        <%= form.file_field :image %>
+36:      </div>
+37:    
+38:      <div>
+39:        <p><%= form.submit %></p>
+40:      </div>
+41:    
+42:    <% end %>
+  
+app/views/students/new.html.erb:9: syntax error, unexpected ':', expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected ':', expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected ':', expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected ':', expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected ':', expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected ':', expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+Started GET "/students/new" for ::1 at 2021-01-09 19:47:20 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1370)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 1435)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 2511)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- <h1>Students#new</h1> -->
+<!-- <p>Find me in app/views/students/new.html.erb</p> -->
+<h1>New Student</h1>
+
+<%= form_with model: @student do |form| %>
+  <div>
+    <p><b>Preferred <%= form.label :name %><br></b></p>
+    <%= form.text_field :name, placeholder: 'Enter your name here'%>
+    <p>Error: <%= "Error:" @student.errors.full_messages_for(:name).each do |message| %></p>
+    <% end %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :password %><br></b></p>
+    <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+  </div>
+
+  <div>
+    <p><b><%= form.label :country %> of Residence<br></b></p>
+    <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+  </div>
+
+  <div>
+    <p><b>English <%= form.label :level %><br></b></p>
+    <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+  </div> 
+
+  <div>
+    <p><b><%= form.label :email %><br></b></p>
+    <%= form.text_field :email, placeholder: 'Enter your email here' %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :image %> (optional)<br></b></p>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <p><%= form.submit %></p>
+  </div>
+
+<% end %>
+
+):
+1:    <!-- <h1>Students#new</h1> -->
+2:    <!-- <p>Find me in app/views/students/new.html.erb</p> -->
+3:    <h1>New Student</h1>
+4:    
+5:    <%= form_with model: @student do |form| %>
+6:      <div>
+7:        <p><b>Preferred <%= form.label :name %><br></b></p>
+8:        <%= form.text_field :name, placeholder: 'Enter your name here'%>
+9:        <p>Error: <%= "Error:" @student.errors.full_messages_for(:name).each do |message| %></p>
+10:        <% end %>
+11:      </div>
+12:    
+13:      <div>
+14:        <p><b><%= form.label :password %><br></b></p>
+15:        <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+16:      </div>
+17:    
+18:      <div>
+19:        <p><b><%= form.label :country %> of Residence<br></b></p>
+20:        <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+21:      </div>
+22:    
+23:      <div>
+24:        <p><b>English <%= form.label :level %><br></b></p>
+25:        <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+26:      </div> 
+27:    
+28:      <div>
+29:        <p><b><%= form.label :email %><br></b></p>
+30:        <%= form.text_field :email, placeholder: 'Enter your email here' %>
+31:      </div>
+32:    
+33:      <div>
+34:        <p><b><%= form.label :image %> (optional)<br></b></p>
+35:        <%= form.file_field :image %>
+36:      </div>
+37:    
+38:      <div>
+39:        <p><%= form.submit %></p>
+40:      </div>
+41:    
+42:    <% end %>
+  
+app/views/students/new.html.erb:9: syntax error, unexpected instance variable, expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected instance variable, expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected instance variable, expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected instance variable, expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected instance variable, expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:9: syntax error, unexpected instance variable, expecting `end'
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+Started GET "/students/new" for ::1 at 2021-01-09 19:47:33 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1876)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 5685)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.0ms | Allocations: 6788)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:47:46 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1354)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1419)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2490)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- <h1>Students#new</h1> -->
+<!-- <p>Find me in app/views/students/new.html.erb</p> -->
+<h1>New Student</h1>
+
+<%= form_with model: @student do |form| %>
+  <div>
+    <p><b>Preferred <%= form.label :name %><br></b></p>
+    <%= form.text_field :name, placeholder: 'Enter your name here'%>
+    
+    <% end %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :password %><br></b></p>
+    <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+  </div>
+
+  <div>
+    <p><b><%= form.label :country %> of Residence<br></b></p>
+    <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+  </div>
+
+  <div>
+    <p><b>English <%= form.label :level %><br></b></p>
+    <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+  </div> 
+
+  <div>
+    <p><b><%= form.label :email %><br></b></p>
+    <%= form.text_field :email, placeholder: 'Enter your email here' %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :image %> (optional)<br></b></p>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <p><%= form.submit %></p>
+  </div>
+
+<% end %>
+
+):
+1:    <!-- <h1>Students#new</h1> -->
+2:    <!-- <p>Find me in app/views/students/new.html.erb</p> -->
+3:    <h1>New Student</h1>
+4:    
+5:    <%= form_with model: @student do |form| %>
+6:      <div>
+7:        <p><b>Preferred <%= form.label :name %><br></b></p>
+8:        <%= form.text_field :name, placeholder: 'Enter your name here'%>
+9:        
+10:        <% end %>
+11:      </div>
+12:    
+13:      <div>
+14:        <p><b><%= form.label :password %><br></b></p>
+15:        <%= form.text_field :password, placeholder: 'Enter your password here', type: 'password', id: 'password', size: '25x10'%>
+16:      </div>
+17:    
+18:      <div>
+19:        <p><b><%= form.label :country %> of Residence<br></b></p>
+20:        <%= form.text_field :country, placeholder: 'Enter your country of residence here', size: '35x10' %>
+21:      </div>
+22:    
+23:      <div>
+24:        <p><b>English <%= form.label :level %><br></b></p>
+25:        <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
+26:      </div> 
+27:    
+28:      <div>
+29:        <p><b><%= form.label :email %><br></b></p>
+30:        <%= form.text_field :email, placeholder: 'Enter your email here' %>
+31:      </div>
+32:    
+33:      <div>
+34:        <p><b><%= form.label :image %> (optional)<br></b></p>
+35:        <%= form.file_field :image %>
+36:      </div>
+37:    
+38:      <div>
+39:        <p><%= form.submit %></p>
+40:      </div>
+41:    
+42:    <% end %>
+  
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/students/new.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+Started GET "/students/new" for ::1 at 2021-01-09 19:47:53 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1833)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 5642)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.0ms | Allocations: 6746)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:48:22 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1876)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 5671)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 6769)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:55:30 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2248)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2312)
+Completed 500 Internal Server Error in 10ms (Allocations: 3382)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+     9:     <p><%= @student.errors.full_messages_for(:name).each do |message| %></p>
+    10:     <% end %>
+    11: 
+    12:             <% if @students.errors.any? %>
+    13:           <div id="error_explanation">
+    14:             <h2><%= pluralize(@student.errors.count, "error") %> prohibited this article from being saved:</h2>
+    15: 
+  
+app/views/students/new.html.erb:12
+app/views/students/new.html.erb:5
+Started GET "/students/new" for ::1 at 2021-01-09 19:55:43 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1986)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 5795)
+Completed 200 OK in 36ms (Views: 34.3ms | Allocations: 6898)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:55:55 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3837)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 7379)
+Completed 200 OK in 35ms (Views: 16.3ms | ActiveRecord: 3.3ms | Allocations: 11184)
+
+
+Started GET "/students" for ::1 at 2021-01-09 19:56:15 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 989)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 4800)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.3ms | Allocations: 5900)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:56:17 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1942)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 5564)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 6081)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:56:17 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 5103)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 5495)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:56:26 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3426)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 6968)
+Completed 200 OK in 27ms (Views: 16.2ms | ActiveRecord: 0.4ms | Allocations: 10176)
+
+
+Started GET "/students" for ::1 at 2021-01-09 19:57:45 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 965)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 4762)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.3ms | Allocations: 5856)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:57:49 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1944)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 5580)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 6097)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:58:02 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3426)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 6982)
+Completed 200 OK in 37ms (Views: 22.4ms | ActiveRecord: 0.6ms | Allocations: 10191)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 19:58:54 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1948)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 5757)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 6861)
+
+
+Started POST "/students" for ::1 at 2021-01-09 19:59:03 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 3432)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 6974)
+Completed 200 OK in 25ms (Views: 14.0ms | ActiveRecord: 0.5ms | Allocations: 10182)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 20:00:43 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1941)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 5736)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 6836)
+
+
+Started POST "/students" for ::1 at 2021-01-09 20:00:53 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 3432)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 6974)
+Completed 200 OK in 27ms (Views: 15.6ms | ActiveRecord: 0.5ms | Allocations: 10182)
+
+
+Started GET "/students" for ::1 at 2021-01-09 20:06:07 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 965)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 4779)
+Completed 200 OK in 55ms (Views: 50.4ms | ActiveRecord: 0.5ms | Allocations: 5874)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 20:06:09 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1946)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 5582)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 6100)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 20:06:10 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 5103)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 5495)
+
+
+Started POST "/students" for ::1 at 2021-01-09 20:06:19 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 3426)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 6982)
+Completed 200 OK in 34ms (Views: 22.6ms | ActiveRecord: 0.5ms | Allocations: 10190)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 20:06:37 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1943)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 5738)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 6841)
+
+
+Started POST "/students" for ::1 at 2021-01-09 20:06:44 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2468)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 6010)
+Completed 200 OK in 32ms (Views: 18.3ms | ActiveRecord: 0.8ms | Allocations: 9198)
+
+
+Started POST "/students" for ::1 at 2021-01-09 20:06:57 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3426)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 6968)
+Completed 200 OK in 23ms (Views: 14.9ms | ActiveRecord: 0.7ms | Allocations: 10175)
+
+
+Started GET "/students" for ::1 at 2021-01-09 20:07:31 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 967)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 4784)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.2ms | Allocations: 5884)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 20:07:34 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1941)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 5572)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 6090)
+
+
+Started POST "/students" for ::1 at 2021-01-09 20:07:37 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 4431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 7987)
+Completed 200 OK in 29ms (Views: 18.1ms | ActiveRecord: 0.4ms | Allocations: 11209)
+
+
+Started GET "/students/new" for ::1 at 2021-01-09 20:07:53 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1943)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 5738)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 6841)
+
+
+Started POST "/students" for ::1 at 2021-01-09 20:07:55 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 4411)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 7953)
+Completed 200 OK in 25ms (Views: 14.0ms | ActiveRecord: 0.4ms | Allocations: 11175)
+
+
+Started GET "/tutors/new" for ::1 at 2021-01-09 20:11:48 -0500
+Processing by TutorsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tutors_controller.rb:17:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5524)
+Completed 200 OK in 31ms (Views: 13.1ms | ActiveRecord: 1.0ms | Allocations: 12661)
+
+
+Started POST "/tutors" for ::1 at 2021-01-09 20:11:52 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "tutors" WHERE "tutors"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 4245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 7801)
+Completed 200 OK in 26ms (Views: 15.7ms | ActiveRecord: 0.8ms | Allocations: 11177)
+
+
+Started GET "/tutors" for ::1 at 2021-01-09 20:12:09 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (1.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 860)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 4657)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 1.0ms | Allocations: 5759)
+
+
+Started GET "/tutors/omar" for ::1 at 2021-01-09 20:12:13 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"omar"}
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.3ms | Allocations: 1194)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tutor with 'id'=omar):
+  
+app/controllers/tutors_controller.rb:3:in `show'
+Started GET "/tutors/new" for ::1 at 2021-01-09 20:12:15 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1778)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 5414)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 5931)
+
+
+Started GET "/tutors/new" for ::1 at 2021-01-09 20:12:15 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 4868)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.0ms | Allocations: 5259)
+
+
+Started POST "/tutors" for ::1 at 2021-01-09 20:12:19 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tutors" WHERE "tutors"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 5356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 8898)
+Completed 200 OK in 30ms (Views: 19.0ms | ActiveRecord: 0.5ms | Allocations: 12108)
+
+
+Started GET "/tutors/new" for ::1 at 2021-01-09 20:12:31 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1670)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 5465)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 6566)
+
+
+Started POST "/tutors" for ::1 at 2021-01-09 20:12:33 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "country"=>"Canada", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tutors" WHERE "tutors"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 7704)
+Completed 200 OK in 27ms (Views: 14.7ms | ActiveRecord: 0.5ms | Allocations: 10916)
+
+
