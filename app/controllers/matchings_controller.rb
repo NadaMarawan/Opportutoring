@@ -4,7 +4,11 @@ class MatchingsController < ApplicationController
   end
 
   def index
-    @matchings = Matching.all
+    if @current_student 
+      @matchings = @current_student.matchings
+    else if @current_tutor
+      @matchings = @current_tutor.matchings
+    end
   end
 
   def new

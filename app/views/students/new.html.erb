@@ -22,9 +22,14 @@
 
   <div>
     <p><b><%= form.label :password %><br></b></p>
-    <%= form.text_field :password, placeholder: "Enter your password here", type: "password", id: "password", size: "25x10" %>
+    <%= form.password_field :password, placeholder: "Enter your password here", type: "password", id: "password", size: "25x10" %>
   </div>
 
+  <div>
+    <p><b><%= form.label :password_confirmation %><br></b></p>
+    <%= form.password_field :password_confirmation, placeholder: "Re-Enter your password here", type: "password", id: "password", size: "25x10" %>
+  </div>
+  
   <div>
     <p><b><%= form.label :country %> of Residence<br></b></p>
     <%= form.text_field :country, placeholder: "Enter your country of residence here", size: "35x10" %>

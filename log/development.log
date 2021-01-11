@@ -9528,3 +9528,2082 @@ Processing by TutorsController#show as HTML
 Completed 200 OK in 32ms (Views: 26.0ms | ActiveRecord: 1.4ms | Allocations: 6820)
 
 
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemovePasswordFromTutors (20210111012018)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudents" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "astudents" ("name","password","country","level","created_at","updated_at","id","email")
+                     SELECT "name","password","country","level","created_at","updated_at","id","email" FROM "students"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "students"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "students" ("name" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "students" ("name","country","level","created_at","updated_at","id","email")
+                     SELECT "name","country","level","created_at","updated_at","id","email" FROM "astudents"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "astudents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111012018"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemovePasswordFromStudents (20210111012133)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atutors" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "atutors" ("name","password","country","created_at","updated_at","id","email")
+                     SELECT "name","password","country","created_at","updated_at","id","email" FROM "tutors"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "tutors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tutors" ("name" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("name","country","created_at","updated_at","id","email")
+                     SELECT "name","country","created_at","updated_at","id","email" FROM "atutors"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "atutors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111012133"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+  [1m[36mStudent Destroy (2.6ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "matchings"[0m
+  [1m[36mMatching Destroy (2.4ms)[0m  [1m[31mDELETE FROM "matchings"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "matchings"[0m
+  [1m[36mStudent Destroy (1.9ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "matchings"[0m
+  [1m[36mTutor Destroy (1.7ms)[0m  [1m[31mDELETE FROM "tutors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordToTutors (20210111012538)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "tutors" ADD "password" digest[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111012538"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToTutors (20210111013443)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "tutors" ADD "password_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111013443"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToStudents (20210111013539)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "students" ADD "password_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111013539"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/students/30/tutors" for 127.0.0.1 at 2021-01-10 20:41:34 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#mytutors as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:11:in `mytutors'
+Completed 404 Not Found in 37ms (ActiveRecord: 0.9ms | Allocations: 6698)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=30):
+  
+app/controllers/students_controller.rb:11:in `mytutors'
+Started GET "/students" for 127.0.0.1 at 2021-01-10 20:41:49 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 892)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 58.1ms | Allocations: 7204)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.7ms | Allocations: 8431)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 20:41:55 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.3ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 4515)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.3ms | Allocations: 6162)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 20:42:20 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 26.7ms | Allocations: 6577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 10118)
+Completed 200 OK in 54ms (Views: 37.8ms | ActiveRecord: 0.0ms | Allocations: 13981)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 20:42:20 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1686)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 5308)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 5700)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 20:42:30 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 3783)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 7325)
+Completed 200 OK in 31ms (Views: 19.8ms | ActiveRecord: 0.4ms | Allocations: 10948)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 20:42:38 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2793)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 6335)
+Completed 200 OK in 283ms (Views: 11.3ms | ActiveRecord: 0.3ms | Allocations: 9667)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 20:42:46 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2735)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6293)
+Completed 200 OK in 279ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 9642)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 20:43:02 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "country", "level", "created_at", "updated_at", "email", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nada Marawan"], ["country", "Canada"], ["level", 0], ["created_at", "2021-01-11 01:43:02.711808"], ["updated_at", "2021-01-11 01:43:02.711808"], ["email", "nada.marwan@mail.mcgill.ca"], ["password_digest", "$2a$12$LrgmiNBNB34d7rCgzW93ju7EvOwdOPg95iYuWE3uZLYG21PPfzNOi"]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/students/1
+Completed 302 Found in 276ms (ActiveRecord: 2.3ms | Allocations: 4323)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 20:43:02 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 23.4ms | Allocations: 6446)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 9976)
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 1.1ms | Allocations: 11032)
+
+
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-10 20:43:15 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+Completed 404 Not Found in 19ms (ActiveRecord: 1.3ms | Allocations: 3822)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tutor with 'id'=1):
+  
+app/controllers/tutors_controller.rb:3:in `show'
+Started GET "/tutors/" for 127.0.0.1 at 2021-01-10 20:43:22 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 821)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 4461)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.2ms | Allocations: 5339)
+
+
+Started GET "/tutors/new" for 127.0.0.1 at 2021-01-10 20:43:26 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2192)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 5814)
+Completed 200 OK in 29ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 9335)
+
+
+Started POST "/tutors" for 127.0.0.1 at 2021-01-10 20:43:30 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tutors" WHERE "tutors"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2521)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 6070)
+Completed 200 OK in 283ms (Views: 11.3ms | ActiveRecord: 0.4ms | Allocations: 9573)
+
+
+Started POST "/tutors" for 127.0.0.1 at 2021-01-10 20:43:42 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tutors" WHERE "tutors"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Create (0.4ms)[0m  [1m[32mINSERT INTO "tutors" ("name", "country", "created_at", "updated_at", "email", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Nada Marawan"], ["country", "Canada"], ["created_at", "2021-01-11 01:43:42.879575"], ["updated_at", "2021-01-11 01:43:42.879575"], ["email", "nada.marwan@mail.mcgill.ca"], ["password_digest", "$2a$12$ahorHj0RLcQzhHgTBGz00utFRJTEMC97zRLmt7tv4E3mCQd20JEsK"]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/tutors/1
+Completed 302 Found in 272ms (ActiveRecord: 2.3ms | Allocations: 3812)
+
+
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-10 20:43:42 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 5275)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.3ms | Allocations: 6320)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTutors (20210104233612)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "tutors" ("name" varchar, "email" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "password" varchar, "country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210104233612"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStudents (20210105024645)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "students" ("name" varchar, "email" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "password" varchar, "country" varchar, "level" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210105024645"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveEmailFromStudents (20210105031831)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudents" ("name" varchar DEFAULT NULL, "email" integer NOT NULL PRIMARY KEY, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "astudents" ("name","email","password","country","level","created_at","updated_at")
+                     SELECT "name","email","password","country","level","created_at","updated_at" FROM "students"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "students"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "students" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "students" ("name","password","country","level","created_at","updated_at")
+                     SELECT "name","password","country","level","created_at","updated_at" FROM "astudents"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "astudents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210105031831"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveEmailFromTutors (20210105031911)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atutors" ("name" varchar DEFAULT NULL, "email" integer NOT NULL PRIMARY KEY, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "atutors" ("name","email","password","country","created_at","updated_at")
+                     SELECT "name","email","password","country","created_at","updated_at" FROM "tutors"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "tutors"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "tutors" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("name","password","country","created_at","updated_at")
+                     SELECT "name","password","country","created_at","updated_at" FROM "atutors"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "atutors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210105031911"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPrimaryKeyToTutors (20210105032036)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atutors" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "atutors" ("name","password","country","created_at","updated_at")
+                     SELECT "name","password","country","created_at","updated_at" FROM "tutors"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "tutors"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "tutors" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer PRIMARY KEY AUTOINCREMENT NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("name","password","country","created_at","updated_at")
+                     SELECT "name","password","country","created_at","updated_at" FROM "atutors"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "atutors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210105032036"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToTutors (20210105032148)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "tutors" ADD "email" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210105032148"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPrimaryKeyToStudents (20210105032225)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudents" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "astudents" ("name","password","country","level","created_at","updated_at")
+                     SELECT "name","password","country","level","created_at","updated_at" FROM "students"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "students"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "students" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer PRIMARY KEY AUTOINCREMENT NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "students" ("name","password","country","level","created_at","updated_at")
+                     SELECT "name","password","country","level","created_at","updated_at" FROM "astudents"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "astudents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210105032225"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToStudents (20210105032326)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "students" ADD "email" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210105032326"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMatchings (20210105032649)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "matchings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tutor_id" integer NOT NULL, "student_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_def18fc442"
+FOREIGN KEY ("tutor_id")
+  REFERENCES "tutors" ("id")
+, CONSTRAINT "fk_rails_f63979b1c3"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_matchings_on_tutor_id" ON "matchings" ("tutor_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_matchings_on_student_id" ON "matchings" ("student_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210105032649"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActiveStorageTables (20210107044911)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210107044911"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemovePasswordFromTutors (20210111012018)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (1.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudents" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "astudents" ("name","password","country","level","created_at","updated_at","id","email")
+                     SELECT "name","password","country","level","created_at","updated_at","id","email" FROM "students"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "students"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "students" ("name" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "students" ("name","country","level","created_at","updated_at","id","email")
+                     SELECT "name","country","level","created_at","updated_at","id","email" FROM "astudents"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "astudents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111012018"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemovePasswordFromStudents (20210111012133)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atutors" ("name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "atutors" ("name","password","country","created_at","updated_at","id","email")
+                     SELECT "name","password","country","created_at","updated_at","id","email" FROM "tutors"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "tutors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tutors" ("name" varchar DEFAULT NULL, "country" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("name","country","created_at","updated_at","id","email")
+                     SELECT "name","country","created_at","updated_at","id","email" FROM "atutors"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "atutors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111012133"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToTutors (20210111013443)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "tutors" ADD "password_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111013443"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToStudents (20210111013539)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "students" ADD "password_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111013539"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-01-11 01:52:46.666254"], ["updated_at", "2021-01-11 01:52:46.666254"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-10 20:53:52 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+Completed 404 Not Found in 26ms (ActiveRecord: 1.0ms | Allocations: 6273)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tutor with 'id'=1):
+  
+app/controllers/tutors_controller.rb:3:in `show'
+Started GET "/tutors" for 127.0.0.1 at 2021-01-10 20:53:56 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 7202)
+Completed 200 OK in 35ms (Views: 31.4ms | ActiveRecord: 0.2ms | Allocations: 8429)
+
+
+Started GET "/tutors" for 127.0.0.1 at 2021-01-10 20:53:57 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 675)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 4300)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.4ms | Allocations: 4699)
+
+
+Started GET "/tutors/new" for 127.0.0.1 at 2021-01-10 20:54:00 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3864)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 7502)
+Completed 200 OK in 40ms (Views: 29.6ms | ActiveRecord: 0.0ms | Allocations: 10949)
+
+
+Started GET "/tutors/new" for 127.0.0.1 at 2021-01-10 20:54:00 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 1454)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 5075)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms | Allocations: 5466)
+
+
+Started POST "/tutors" for 127.0.0.1 at 2021-01-10 20:54:06 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tutors" WHERE "tutors"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3612)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 7154)
+Completed 200 OK in 282ms (Views: 12.9ms | ActiveRecord: 0.4ms | Allocations: 10859)
+
+
+Started POST "/tutors" for 127.0.0.1 at 2021-01-10 20:54:18 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tutor"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tutors" WHERE "tutors"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTutor Create (0.8ms)[0m  [1m[32mINSERT INTO "tutors" ("name", "country", "created_at", "updated_at", "email", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Nada Marawan"], ["country", "Canada"], ["created_at", "2021-01-11 01:54:18.486930"], ["updated_at", "2021-01-11 01:54:18.486930"], ["email", "nada.marwan@mail.mcgill.ca"], ["password_digest", "$2a$12$mvZbTMD7rH5rtXk5wj78m.w4w3WmwYwuUWxUIhJbFIaEe79SsD5ly"]]
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tutors_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/tutors/1
+Completed 302 Found in 275ms (ActiveRecord: 2.5ms | Allocations: 4307)
+
+
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-10 20:54:18 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 15.7ms | Allocations: 4496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 8025)
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 1.1ms | Allocations: 9082)
+
+
+Started GET "/tutors/" for 127.0.0.1 at 2021-01-10 20:54:23 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 721)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 4357)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.1ms | Allocations: 4745)
+
+
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-10 20:54:25 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:3
+  Rendered tutors/show.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1458)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 5249)
+Completed 200 OK in 28ms (Views: 21.4ms | ActiveRecord: 0.8ms | Allocations: 6169)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-10 20:54:30 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 831)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 4433)
+Completed 200 OK in 55ms (Views: 37.1ms | ActiveRecord: 0.4ms | Allocations: 7632)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 20:54:33 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2675)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 6297)
+Completed 200 OK in 26ms (Views: 17.3ms | ActiveRecord: 0.6ms | Allocations: 10401)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 20:54:33 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1686)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 5307)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 5699)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 20:54:39 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 6305)
+Completed 200 OK in 281ms (Views: 12.4ms | ActiveRecord: 0.3ms | Allocations: 9818)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 20:54:48 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("name", "country", "level", "created_at", "updated_at", "email", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nada Marawan"], ["country", "Canada"], ["level", 0], ["created_at", "2021-01-11 01:54:49.252607"], ["updated_at", "2021-01-11 01:54:49.252607"], ["email", "nada.marwan@mail.mcgill.ca"], ["password_digest", "$2a$12$K6gmbHRFWoHmMh5ogJiQyOCN.1ntHL11ZAro6lKn1XS.C/3kVIHYC"]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/students/1
+Completed 302 Found in 278ms (ActiveRecord: 2.2ms | Allocations: 3694)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 20:54:49 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1761)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5291)
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 0.5ms | Allocations: 6451)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 21:11:19 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210111020814_create_tests.rb
+
+
+):
+  
+activerecord (6.1.0) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.0) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.0) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.0) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.0) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.0) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.0) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.0) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.0) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.0) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.0) lib/rails/engine.rb:539:in `call'
+puma (5.1.1) lib/puma/configuration.rb:246:in `call'
+puma (5.1.1) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.1.1) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.1.1) lib/puma/request.rb:75:in `handle_request'
+puma (5.1.1) lib/puma/server.rb:431:in `process_client'
+puma (5.1.1) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 21:13:59 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 4408)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 112.6ms | Allocations: 29945)
+Completed 200 OK in 150ms (Views: 113.9ms | ActiveRecord: 1.3ms | Allocations: 40342)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 21:14:02 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4220)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 7951)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 8488)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 21:14:02 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 5408)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms | Allocations: 5810)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 21:14:34 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 3817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 7480)
+Completed 200 OK in 288ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 11162)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 21:14:53 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada.marwan@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada.marwan@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2658)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 6309)
+Completed 200 OK in 279ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 9585)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 21:15:04 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2722)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6383)
+Completed 200 OK in 294ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 9710)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 21:15:15 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("name", "country", "level", "created_at", "updated_at", "email", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nada Marawan"], ["country", "Canada"], ["level", 0], ["created_at", "2021-01-11 02:15:15.678162"], ["updated_at", "2021-01-11 02:15:15.678162"], ["email", "nada@mail.mcgill.ca"], ["password_digest", "$2a$12$arKBoLXQx0ZiqYucpMrcHOFcZ3v5AaPtJEWvpjvmWXEa8OGt/M2kW"]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/students/2
+Completed 302 Found in 270ms (ActiveRecord: 2.2ms | Allocations: 4404)
+
+
+Started GET "/students/2" for 127.0.0.1 at 2021-01-10 21:15:15 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4738)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 5654)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Destroy (2.0ms)[0m  [1m[31mDELETE FROM "students"[0m
+Started GET "/students/2" for 127.0.0.1 at 2021-01-10 21:16:18 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+Completed 404 Not Found in 33ms (ActiveRecord: 0.7ms | Allocations: 6978)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=2):
+  
+app/controllers/students_controller.rb:3:in `show'
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 21:16:22 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | Allocations: 11230)
+Completed 200 OK in 59ms (Views: 43.0ms | ActiveRecord: 0.0ms | Allocations: 15792)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 21:16:33 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"Nada Marawan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"Canada", "level"=>"beginner", "email"=>"nada@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "country", "level", "created_at", "updated_at", "email", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nada Marawan"], ["country", "Canada"], ["level", 0], ["created_at", "2021-01-11 02:16:33.429632"], ["updated_at", "2021-01-11 02:16:33.429632"], ["email", "nada@mail.mcgill.ca"], ["password_digest", "$2a$12$xqynY1NxINoEw8pmnPGAF.Bikl0M3W2KMeXtBucNH2Uig/DlBsj2O"]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/students/1
+Completed 302 Found in 279ms (ActiveRecord: 2.3ms | Allocations: 4826)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 21:16:33 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 4518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 8154)
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 0.8ms | Allocations: 9216)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 21:36:01 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210111020814_create_tests.rb
+
+
+):
+  
+activerecord (6.1.0) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.0) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.0) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.0) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.0) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.0) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.0) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.0) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.0) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.0) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.0) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.0) lib/rails/engine.rb:539:in `call'
+puma (5.1.1) lib/puma/configuration.rb:246:in `call'
+puma (5.1.1) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.1.1) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.1.1) lib/puma/request.rb:75:in `handle_request'
+puma (5.1.1) lib/puma/server.rb:431:in `process_client'
+puma (5.1.1) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 21:36:30 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 18.1ms | Allocations: 4403)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.8ms | Allocations: 11331)
+Completed 200 OK in 94ms (Views: 50.5ms | ActiveRecord: 1.8ms | Allocations: 21727)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 21:36:35 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1008)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 4740)
+Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 0.4ms | Allocations: 5676)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 21:39:52 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 26.3ms | Allocations: 4700)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 92.8ms | Allocations: 25186)
+Completed 200 OK in 137ms (Views: 97.0ms | ActiveRecord: 0.6ms | Allocations: 35598)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 21:39:55 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"XYCeRoYWObxHaAWrAetuKIo3jZ6i4B4jjb0lm6q5_JhzjBhGm9-OMKv161eThXVsBeWHlbpJOQG4R8INgld-ZA", "student"=>{"name"=>"", "password"=>"ppppoooo", "password_confirmation"=>"", "country"=>"", "level"=>"beginner", "email"=>"nada@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 5830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 9430)
+Completed 200 OK in 313ms (Views: 36.8ms | ActiveRecord: 0.6ms | Allocations: 13475)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-10 21:56:03 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 25.1ms | Allocations: 5149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 103.1ms | Allocations: 29420)
+Completed 200 OK in 131ms (Views: 107.4ms | ActiveRecord: 1.5ms | Allocations: 35747)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 21:56:05 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 22.8ms | Allocations: 4458)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 8209)
+Completed 200 OK in 49ms (Views: 35.5ms | ActiveRecord: 1.0ms | Allocations: 10165)
+
+
+Started GET "/student_sessions/new" for 127.0.0.1 at 2021-01-10 21:56:17 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 4648)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 4712)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 5560)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<ActionView::Base:0x000000000098a8>
+Did you mean?  session):
+    3: 
+    4: <p id=”alert”><%= alert %></p>
+    5: <h1>Student Login</h1>
+    6: <%= form_tag sessions_path do |form| %>
+    7:   <div class=”field”>
+    8:     <%= label_tag :email %>
+    9:     <%= text_field_tag :email %>
+  
+app/views/student_sessions/new.html.erb:6
+Started GET "/student_sessions/new" for 127.0.0.1 at 2021-01-10 21:56:54 -0500
+  
+SyntaxError (/Users/nadashoukry/Desktop/Shopify-Project/Opportutoring/config/routes.rb:6: syntax error, unexpected ':', expecting `end'
+  resources: student_sessions
+           ^
+/Users/nadashoukry/Desktop/Shopify-Project/Opportutoring/config/routes.rb:41: syntax error, unexpected `end', expecting end-of-input):
+  
+config/routes.rb:6: syntax error, unexpected ':', expecting `end'
+config/routes.rb:41: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:6: syntax error, unexpected ':', expecting `end'
+config/routes.rb:41: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:6: syntax error, unexpected ':', expecting `end'
+config/routes.rb:41: syntax error, unexpected `end', expecting end-of-input
+Started GET "/student_sessions/new" for 127.0.0.1 at 2021-01-10 21:57:05 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 4188)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 4254)
+Completed 500 Internal Server Error in 13ms (Allocations: 4808)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<ActionView::Base:0x0000000000bf18>
+Did you mean?  session):
+    3: 
+    4: <p id=”alert”><%= alert %></p>
+    5: <h1>Student Login</h1>
+    6: <%= form_tag sessions_path do |form| %>
+    7:   <div class=”field”>
+    8:     <%= label_tag :email %>
+    9:     <%= text_field_tag :email %>
+  
+app/views/student_sessions/new.html.erb:6
+Started GET "/student_sessions/new" for 127.0.0.1 at 2021-01-10 22:02:57 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 5265)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5329)
+Completed 500 Internal Server Error in 14ms (Allocations: 6391)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“Login”' for #<ActionView::Base:0x0000000000de58>):
+    13:     <%= password_field_tag :password %>
+    14:   </div>
+    15:   <div class=”actions”>
+    16:     <%= submit_tag “Login” %>
+    17:   </div>
+    18: <% end %>
+  
+app/views/student_sessions/new.html.erb:16
+app/views/student_sessions/new.html.erb:6
+Started GET "/student_sessions/new" for 127.0.0.1 at 2021-01-10 22:04:02 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 5036)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 5101)
+Completed 500 Internal Server Error in 9ms (Allocations: 5573)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“Login”' for #<ActionView::Base:0x0000000000feb0>):
+    13:     <%= password_field_tag :password %>
+    14:   </div>
+    15:   <div class=”actions”>
+    16:     <%= submit_tag “Login” %>
+    17:   </div>
+    18: <% end %>
+  
+app/views/student_sessions/new.html.erb:16
+app/views/student_sessions/new.html.erb:6
+Started GET "/student_sessions/new" for 127.0.0.1 at 2021-01-10 22:05:58 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 5245)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5309)
+Completed 500 Internal Server Error in 15ms (Allocations: 6371)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“Login”' for #<ActionView::Base:0x00000000011df0>):
+    13:     <%= password_field_tag :password_digest %>
+    14:   </div>
+    15:   <div class=”actions”>
+    16:     <%= submit_tag “Login” %>
+    17:   </div>
+    18: <% end %>
+  
+app/views/student_sessions/new.html.erb:16
+app/views/student_sessions/new.html.erb:6
+Started GET "/student_sessions/new" for 127.0.0.1 at 2021-01-10 22:06:08 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 5266)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 5330)
+Completed 500 Internal Server Error in 21ms (Allocations: 6386)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“Login”' for #<ActionView::Base:0x00000000012228>):
+    13:     <%= password_field_tag :password_digest %>
+    14:   </div>
+    15:   <div class=”actions”>
+    16:     <%= submit_tag “Login” %>
+    17:   </div>
+    18: <% end %>
+  
+app/views/student_sessions/new.html.erb:16
+app/views/student_sessions/new.html.erb:6
+Started GET "/student_sessions/new" for 127.0.0.1 at 2021-01-10 22:06:16 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 14.9ms | Allocations: 5265)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5330)
+Completed 500 Internal Server Error in 23ms (Allocations: 6393)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“Login”' for #<ActionView::Base:0x000000000126b0>):
+    13:     <%= password_field_tag :password_digest %>
+    14:   </div>
+    15:   <div class=”actions”>
+    16:     <%= submit_tag “Login” %>
+    17:   </div>
+    18: <% end %>
+  
+app/views/student_sessions/new.html.erb:16
+app/views/student_sessions/new.html.erb:6
+Started GET "/students" for 127.0.0.1 at 2021-01-10 22:19:03 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/students/index.html.erb:4
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 20.8ms | Allocations: 5493)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 9499)
+Completed 200 OK in 49ms (Views: 42.3ms | ActiveRecord: 1.4ms | Allocations: 12820)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 22:19:06 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 16.5ms | Allocations: 3224)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 6866)
+Completed 200 OK in 31ms (Views: 24.6ms | ActiveRecord: 1.4ms | Allocations: 8528)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-10 22:19:33 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 715)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 4460)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.2ms | Allocations: 4849)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-10 22:19:52 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 22.5ms | Allocations: 5477)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 56.2ms | Allocations: 12795)
+Completed 200 OK in 85ms (Views: 61.5ms | ActiveRecord: 1.3ms | Allocations: 19702)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-10 22:19:54 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 723)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4455)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.1ms | Allocations: 4858)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-10 22:20:03 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 710)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4440)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms | Allocations: 4827)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-10 22:21:01 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 847)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/nadashoukry/Desktop/Shopify-Project/Opportutoring/public/packs
+[Webpacker] Hash: 415a948d492e21802f43
+Version: webpack 4.44.2
+Time: 1307ms
+Built at: 2021-01-10 10:21:05 p.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-d5a3c3b4dce84b5eb605.js    125 KiB  application  [emitted] [immutable]  application
+js/application-d5a3c3b4dce84b5eb605.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-d5a3c3b4dce84b5eb605.js js/application-d5a3c3b4dce84b5eb605.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3818.1ms | Allocations: 5961)
+Completed 200 OK in 3828ms (Views: 3825.5ms | ActiveRecord: 0.3ms | Allocations: 7058)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 22:21:08 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 20.9ms | Allocations: 4376)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 8032)
+Completed 200 OK in 44ms (Views: 27.0ms | ActiveRecord: 1.0ms | Allocations: 11576)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2021-01-10 23:05:56 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1192)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 5097)
+Completed 200 OK in 29ms (Views: 21.3ms | ActiveRecord: 1.3ms | Allocations: 7329)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-10 23:06:00 -0500
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 880)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 4626)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 5224)
+
+
+Started GET "/student_sessions/new" for 127.0.0.1 at 2021-01-10 23:06:03 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 4216)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 5089)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:06:24 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"M45ejg8un6KyjnPqA3qanPG7GZCJ37JjGO7wupmXp_Snjek0nLsinKXK98ssmXwlShLFAyB9s_unJ0ECbPIH2w", "email"=>"nada@mail.mcgill.ca", "password_digest"=>"ppppoooo", "commit"=>"Login"}
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3992)
+Completed 200 OK in 273ms (Views: 8.6ms | ActiveRecord: 0.8ms | Allocations: 5165)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:06:30 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"_iqwRj5AyHJIIUZzB-N5CyENePbV7HvGDI64sFY1sm1qKQf8rdV1TF9lwlIoAJ-ymqSkZXxOel6zRwkIo1ASQg", "email"=>"nada@mail.mcgill.ca", "password_digest"=>"ppppoooo", "commit"=>"Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3989)
+Completed 200 OK in 273ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 4968)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 23:06:44 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 35.6ms | Allocations: 6449)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 10103)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.0ms | Allocations: 10636)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 23:06:45 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 5426)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 5820)
+
+
+Started GET "/student_sessions" for 127.0.0.1 at 2021-01-10 23:06:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/student_sessions"):
+  
+Started GET "/login" for 127.0.0.1 at 2021-01-10 23:06:58 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/student_login" for 127.0.0.1 at 2021-01-10 23:07:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/student_login"):
+  
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:07:26 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 331)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 4200)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 4651)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 23:07:30 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1759)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 5489)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 5910)
+
+
+Started POST "/students" for 127.0.0.1 at 2021-01-10 23:07:46 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"X6kXwOKGwwJPr6oejL2PIbUwhhuZkiniANm0kPxAM8PLqqB6cRN-PFjrLj-jXmmYDplaiDAwKHq_EAUoCSWT7A", "student"=>{"name"=>"Nada Marawan", "password"=>"pppppppp", "password_confirmation"=>"pppppppp", "country"=>"Canada", "level"=>"beginner", "email"=>"nadaa@mail.mcgill.ca"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("name", "country", "level", "created_at", "updated_at", "email", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nada Marawan"], ["country", "Canada"], ["level", 0], ["created_at", "2021-01-11 04:07:46.647819"], ["updated_at", "2021-01-11 04:07:46.647819"], ["email", "nadaa@mail.mcgill.ca"], ["password_digest", "$2a$12$qrcuOflIkEdsd3EtlCLLue.rwYpTEzyaQmIcxvQOFTJzhHH2j1mZq"]]
+  ↳ app/controllers/students_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/students/2
+Completed 302 Found in 273ms (ActiveRecord: 2.3ms | Allocations: 4777)
+
+
+Started GET "/students/2" for 127.0.0.1 at 2021-01-10 23:07:46 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Student"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/students/show.html.erb:3
+  Rendered students/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1039)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4770)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 5697)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-10 23:07:50 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 5407)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 5798)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:07:51 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4004)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4380)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:07:57 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Gayui--695EmeFc5COD69wt2CFS-_AqsxJYXsGNLd8CNrxkxfC9KrzE80xgnAxxOsN_UxxdeCzR7X6YIli7X7w", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3989)
+Completed 200 OK in 274ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 4972)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:12:24 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Y5uQjt514XCsGgjpdShsYfQqJIwwfrrAbXbcA9RBZdv3mCc0TeBcTrtejMhay4rYT4P4H5ncu1jSv227ISTF9A", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 33ms (ActiveRecord: 0.8ms | Allocations: 9581)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:12:24 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.4ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1013)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 98.4ms | Allocations: 27670)
+Completed 200 OK in 111ms (Views: 102.6ms | ActiveRecord: 0.4ms | Allocations: 30549)
+
+
+Started GET "/student_login" for 127.0.0.1 at 2021-01-10 23:12:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/student_login"):
+  
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:12:45 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 549)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 4461)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 5425)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:12:51 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WK9kcVwjdDnLKhLvMXJj2i3-XTJq4i7aIvmcIoDGav3MrNPLz7bJB9xuls4ekYVjlleBocNAL0KdMC2adaPK0g", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 928)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:12:51 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.1ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 698)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4487)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.1ms | Allocations: 4896)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:13:03 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 4059)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 4449)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:13:07 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"p5lducnI7ME-PopnHJGCv8eRqU27E3NwKEv8MpVGASEzmuoDWl1R_yl6DkYzcmQGfDh13hKxcuiXgk2KYCOhDg", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"ppppp", "commit"=>"Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 828)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:13:07 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.1ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 668)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4467)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.1ms | Allocations: 4864)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:13:31 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4053)
+Completed 200 OK in 9ms (Views: 8.4ms | Allocations: 4564)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:13:35 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WWQyoclW019F0Uv4soLnwQZirZc0hpK5zTCYlYEA4i_NZ4UbWsNuYVKVz9mdYQF4vctxBJ0kkyFy-SktdGVCAA", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"ppppppppp", "commit"=>"Login"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4051)
+Completed 200 OK in 309ms (Views: 8.2ms | ActiveRecord: 3.7ms | Allocations: 12104)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:13:40 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Y1kIoBAtUs0X3yjkBDNUQCfBGvOnbh_tYMLpzjmzxT_3Wr8ag7jv8wCbrMUr0LL5nGjGYA7MHnXfC1h2zNZlEA", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 266ms (ActiveRecord: 0.4ms | Allocations: 868)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:13:41 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.5ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 684)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4471)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.5ms | Allocations: 5477)
+
+
+Started GET "/student_sessions" for 127.0.0.1 at 2021-01-10 23:13:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/student_sessions"):
+  
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:13:57 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.2ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 667)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4466)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.2ms | Allocations: 4864)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:14:02 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4067)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 4454)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:15:07 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 488)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/nadashoukry/Desktop/Shopify-Project/Opportutoring/public/packs
+[Webpacker] Hash: 415a948d492e21802f43
+Version: webpack 4.44.2
+Time: 1008ms
+Built at: 2021-01-10 11:15:10 p.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-d5a3c3b4dce84b5eb605.js    125 KiB  application  [emitted] [immutable]  application
+js/application-d5a3c3b4dce84b5eb605.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-d5a3c3b4dce84b5eb605.js js/application-d5a3c3b4dce84b5eb605.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3344.4ms | Allocations: 5650)
+Completed 200 OK in 3358ms (Views: 3355.7ms | ActiveRecord: 0.0ms | Allocations: 6739)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:15:36 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"TQ6LP7HzpOJ-bFiX9_25YlM3YL5v8Vml4wAJgsQp_IXZDTyFImYZ3Gko3LbYHl_b6J68LcZTWD1cybg6MUxcqg", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 264ms (ActiveRecord: 0.3ms | Allocations: 856)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:15:37 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.3ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 851)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4653)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.3ms | Allocations: 5548)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:15:38 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4066)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 4451)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:15:40 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"7oGaB4rYY-y6CXpi3mzydECpwKS4rbInjCQPqa5Zg9B6gi29GU3e0q1N_kPxjxTN-wAcNxEPs78z7b4RWzwj_w", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"p", "commit"=>"Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4043)
+Completed 200 OK in 269ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 5022)
+
+
+Started GET "/tutor_sessions" for 127.0.0.1 at 2021-01-10 23:16:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tutor_sessions"):
+  
+Started GET "/tutor_sessions" for 127.0.0.1 at 2021-01-10 23:17:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tutor_sessions"):
+  
+Started GET "/tutor_sessions" for 127.0.0.1 at 2021-01-10 23:17:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tutor_sessions"):
+  
+Started GET "/tutors" for 127.0.0.1 at 2021-01-10 23:17:42 -0500
+Processing by TutorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/tutors/index.html.erb:4
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/views/tutors/index.html.erb:4
+  Rendered tutors/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 4914)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 8886)
+Completed 200 OK in 31ms (Views: 24.3ms | ActiveRecord: 1.7ms | Allocations: 12075)
+
+
+Started GET "/tutors/login" for 127.0.0.1 at 2021-01-10 23:17:43 -0500
+Processing by TutorSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 492)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 4275)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.0ms | Allocations: 5153)
+
+
+Started POST "/tutor_sessions" for 127.0.0.1 at 2021-01-10 23:17:45 -0500
+Processing by TutorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"c59tEzr49d_-X9wqYkp51O4ZWWEXk6lsh6zU8nmMk13nnNqpqW1I4ekbWAtNqZ9tVbCF8r4xqPQ4ZWVKjOkzcg", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutor_sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4048)
+Completed 200 OK in 17ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 5138)
+
+
+Started GET "/tutor_sessions" for 127.0.0.1 at 2021-01-10 23:18:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tutor_sessions"):
+  
+Started GET "/tutors/login" for 127.0.0.1 at 2021-01-10 23:18:14 -0500
+Processing by TutorSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 493)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 4464)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 5554)
+
+
+Started GET "/tutors/login" for 127.0.0.1 at 2021-01-10 23:41:27 -0500
+Processing by TutorSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 491)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 4441)
+Completed 200 OK in 19ms (Views: 17.8ms | Allocations: 5534)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:41:36 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 494)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4292)
+Completed 200 OK in 19ms (Views: 17.0ms | Allocations: 5162)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:41:37 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"5K2qN-f6owy533VGL1_aeVD0SsEZN_5CDujROYJwjM1wrh2NdG8eMq6b8WcAvDzA612WUrCV_9qxIWCBdxUs4g", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 290ms (ActiveRecord: 2.0ms | Allocations: 7679)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:41:37 -0500
+Processing by MatchingsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1070)
+
+
+  
+NoMethodError (undefined method `matchings' for nil:NilClass):
+  
+app/controllers/matchings_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:44:31 -0500
+  
+SyntaxError (/Users/nadashoukry/Desktop/Shopify-Project/Opportutoring/app/controllers/matchings_controller.rb:47: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/matchings_controller.rb:47: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/matchings_controller.rb:47: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/matchings_controller.rb:47: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:44:43 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/matchings/index.html.erb:4
+  [1m[36mMatching Load (0.4ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1557)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 5359)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.9ms | Allocations: 6849)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:45:23 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4029)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 4535)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:45:28 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ascz06uwKkEbHM8G0CUWv-vzT5wqXLrExQlhjVTn3JCWxIRpOCWXfwxYSyf_xvAGUFqTD4P-u1x6wNA1oYJ8vw", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 283ms (ActiveRecord: 2.3ms | Allocations: 7005)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:45:28 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.1ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 667)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4451)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 4848)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:48:15 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/matchings/index.html.erb:4
+  [1m[36mMatching Load (0.3ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1376)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 5157)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.6ms | Allocations: 6143)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:48:17 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4067)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 4575)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:48:19 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"7H3U1SUSeVX0x28LJl0PROjldxkgMU1mLVhuYz_X-iZ4fmNvtofEa-OD6yoJvun9U0yriomTTP6Skd_byrJaCQ", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 281ms (ActiveRecord: 1.0ms | Allocations: 6998)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:48:19 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.1ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 667)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4451)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms | Allocations: 4847)
+
+
+Started GET "/students/login" for 127.0.0.1 at 2021-01-10 23:50:15 -0500
+Processing by StudentSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_sessions/new.html.erb within layouts/application
+  Rendered student_sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4061)
+Completed 200 OK in 11ms (Views: 10.4ms | Allocations: 4571)
+
+
+Started POST "/student_sessions" for 127.0.0.1 at 2021-01-10 23:50:17 -0500
+Processing by StudentSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"NaSPpv8TSNKC8klwBrlzTIqnrXUyeEJLp74C2CX3tjyhpzgcbIb17JW2zVEpWpX1MQ5x5pvaQ9MYd7Ng0JIWEw", "email"=>"nadaa@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "nadaa@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 283ms (ActiveRecord: 1.4ms | Allocations: 7786)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-10 23:50:17 -0500
+Processing by MatchingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Load (0.3ms)[0m  [1m[34mSELECT "matchings".* FROM "matchings"[0m
+  ↳ app/views/matchings/index.html.erb:4
+  Rendered matchings/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 683)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4470)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 5353)
+
+
+Started GET "/students/mytutors" for 127.0.0.1 at 2021-01-10 23:51:45 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"mytutors"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:3:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.3ms | Allocations: 1167)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=mytutors):
+  
+app/controllers/students_controller.rb:3:in `show'
+Started GET "/students/30/mytutors" for 127.0.0.1 at 2021-01-10 23:51:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/students/30/mytutors"):
+  
+Started GET "/students/5/mytutors" for 127.0.0.1 at 2021-01-10 23:51:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/students/5/mytutors"):
+  
+Started GET "/students/5/tutors" for 127.0.0.1 at 2021-01-10 23:52:27 -0500
+Processing by StudentsController#mytutors as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:11:in `mytutors'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1085)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=5):
+  
+app/controllers/students_controller.rb:11:in `mytutors'
+Started GET "/students/30/tutors" for 127.0.0.1 at 2021-01-10 23:52:37 -0500
+Processing by StudentsController#mytutors as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:11:in `mytutors'
+Completed 404 Not Found in 15ms (ActiveRecord: 0.2ms | Allocations: 1083)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=30):
+  
+app/controllers/students_controller.rb:11:in `mytutors'

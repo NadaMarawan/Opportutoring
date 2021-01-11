@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_044911) do
+ActiveRecord::Schema.define(version: 2021_01_11_013539) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -50,21 +50,21 @@ ActiveRecord::Schema.define(version: 2021_01_07_044911) do
 
   create_table "students", force: :cascade do |t|
     t.string "name"
-    t.string "password"
     t.string "country"
     t.integer "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
+    t.string "password_digest"
   end
 
   create_table "tutors", force: :cascade do |t|
     t.string "name"
-    t.string "password"
     t.string "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
+    t.string "password_digest"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

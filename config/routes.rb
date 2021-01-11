@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html\
+  resources :student_sessions, only: [:new, :create, :destroy]
+  get "students/login", to: "student_sessions#new", as: "student_login"
+  get "students/logout", to: "student_sessions#destroy", as: "student_logout"
+
+  resources :tutor_sessions, only: [:new, :create, :destroy]
+  get "tutors/login", to: "tutor_sessions#new", as: "tutor_login"
+  get "tutors/logout", to: "tutor_sessions#destroy", as: "tutor_logout"
 
   root "matchings#index"
 

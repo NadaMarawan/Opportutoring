@@ -42,6 +42,6 @@ class TutorsController < ApplicationController
   # permit some attributes to be used in the returned hash (whitelist)
   # if checks are passed, returns a hash that is used here to create or update a tutor object
   def tutor_params
-    params.require(:tutor).permit(:name, :password, :country, :email, :image)
+    params.require(:tutor).permit(:name, :password, :password_confirmation, :country, :email, :image)
   end
 end

@@ -1,4 +1,5 @@
 class Student < ApplicationRecord
+  has_secure_password
   enum level: [:beginner, :intermediate, :advanced]
 
   has_many :matchings

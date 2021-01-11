@@ -1,0 +1,18 @@
+<!-- <h1>StudentSessions#new</h1>
+<p>Find me in app/views/student_sessions/new.html.erb</p> -->
+
+<p id=”alert”><%= alert %></p>
+<h1>Student login</h1>
+<%= form_tag student_sessions_path do |form| %>
+  <div class=”field”>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+  <div class=”field”>
+    <%= label_tag :password_digest %>
+    <%= password_field_tag :password_digest %>
+  </div>
+  <div class=”actions”>
+    <%= submit_tag "Login" %>
+  </div>
+<% end %>
