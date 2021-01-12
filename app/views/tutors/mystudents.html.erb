@@ -1,8 +1,13 @@
 <h1> Students matched with <%= @tutor.name %> </h1>
 
-<ul>
-    <% @tutor.students.each do |student| %>
-    <li><b> <%= link_to student.name, student_path(student) %> </b></li>
-        <p> <%= student.email %> </p>
-    <% end %>
-</ul>
+<% if !@tutor.matchings.empty? %>
+    <ul>
+        <% @tutor.students.each do |student| %>
+        <li><b> <%= link_to student.name, student_path(student) %> </b></li>
+            <b>Email:</b> <%=student.email%><br>
+            <b>Currently resides in:</b> <%=student.country%><br><br>
+        <% end %>
+    </ul>
+<% else %>
+You have no current matchings.
+<% end %>

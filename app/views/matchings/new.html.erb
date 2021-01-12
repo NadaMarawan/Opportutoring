@@ -4,13 +4,13 @@
 
 <%= form_with model: @matching do |form| %>
   <div>
-    <%= form.label :student_id %><br>
-    <%= form.collection_select :student_id, @students, :id, :name %>
+    <%= form.label :student_id %>
+    <%= form.collection_select :student_id, @students, :id, :name %><br><br>
   </div>
 
   <div>
-    <%= form.label :tutor_id %><br>
-    <%= form.collection_select :tutor_id, @tutors, :id, :name %>
+    <%= form.label :tutor_id %>
+    <%= form.collection_select :tutor_id, @tutors, :id, :name %><br><br>
   </div>
 
   <div>

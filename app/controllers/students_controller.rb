@@ -21,13 +21,9 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
 
     if @student.save
-      # go to show page for @student
-      redirect_to action: "show", id: @student.id
-      # goes to new form
-      #redirect_to action: "new"
-      #redirect_to students_path(@student)
-      #redirect_to @student
-      #redirect_to action: "show"
+      session[:student_id] = @student.id
+      session[:tutor_id] = nil
+      redirect_to root_url, notice: "Logged in!"
     else
       # can setup an error message here
       render :new

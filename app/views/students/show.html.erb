@@ -1,4 +1,4 @@
-<h1>New Student Created</h1>
+<h1><%= @student.name %>'s Profile</h1>
 
 <% if @student.image.attached? %>
   <img src="<%= (url_for(@student.image)) %>">

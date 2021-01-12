@@ -4,10 +4,13 @@ class MatchingsController < ApplicationController
   end
 
   def index
+
     if @current_student 
       @matchings = @current_student.matchings
-    else if @current_tutor
+    elsif @current_tutor
       @matchings = @current_tutor.matchings
+    else 
+      @matchings = Matching.all
     end
   end
 
@@ -36,13 +39,13 @@ class MatchingsController < ApplicationController
   end
 
   # helper
-  private
 
   # require a matching object to be in "params" object (= object that contains all parameters being passed into the request)
   # also requires (only) specified paramaters to exits in "params" object
   # permit some attributes to be used in the returned hash (whitelist)
   # if checks are passed, returns a hash that is used here to create or update a matching object
-  def matching_params
-    params.require(:matching).permit(:tutor_id, :student_id)
-  end
+  private
+    def matching_params
+      params.require(:matching).permit(:tutor_id, :student_id)
+    end
 end

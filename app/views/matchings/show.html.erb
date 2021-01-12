@@ -1,2 +1,4 @@
 <h1>New Matching Created</h1>
-<p><%= @matching.id %></p>
+<b> Matching #<%= @matching.id %> </b></li>
+<p> Tutor: <%= link_to @matching.tutor.name, tutor_path(@matching.tutor) %> (email: <%= @matching.tutor.email %>)</p>
+<p> Student: <%= link_to @matching.student.name, student_path(@matching.student) %> (email: <%= @matching.student.email %>)</p>

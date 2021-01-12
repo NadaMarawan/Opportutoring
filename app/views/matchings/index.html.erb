@@ -1,9 +1,13 @@
 <h1>Current matchings</h1>
 
-<ul>
-    <% @matchings.each do |matching| %>
-    <li><b> Matching <%= matching.id %> </b></li>
-        <p> Tutor: <%= link_to matching.tutor.name, tutor_path(matching.tutor) %> (email: <%= matching.tutor.email %>)</p>
-        <p> Student: <%= link_to matching.student.name, student_path(matching.student) %> (email: <%= matching.student.email %>)</p>
-    <% end %>
-</ul>
+<% if !@matchings.empty? %>
+    <ul>
+        <% @matchings.each do |matching| %>
+        <li><b> Matching #<%= matching.id %> </b></li>
+            <p> Tutor: <%= link_to matching.tutor.name, tutor_path(matching.tutor) %> (email: <%= matching.tutor.email %>)</p>
+            <p> Student: <%= link_to matching.student.name, student_path(matching.student) %> (email: <%= matching.student.email %>)</p>
+        <% end %>
+    </ul>
+<% else %>
+Sorry, no current matching yet!
+<% end %>
