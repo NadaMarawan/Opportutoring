@@ -1,0 +1,51 @@
+<h1>Edit Tutor Profile</h1>
+
+<%= form_with model: @tutor do |form| %>
+
+<% if @tutor.errors.any? %>
+          <div id="error_explanation">
+            <h3 style="color:red"><%= pluralize(@tutor.errors.count, "Error") %>:</h3>
+            <ul>
+              <% @tutor.errors.each do |error| %>
+                <li style="color:red"><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+  <div>
+    <p><b><%= form.label :name %><br></b></p>
+    <%= form.text_field :name, placeholder: "Enter your name here", disabled: true %>     
+  </div>
+
+  <div>
+    <p><b> Change <%= form.label :password %> (optional)<br></b></p>
+    <%= form.text_field :password, placeholder: "Change your password here", size: "25x10" %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :password_confirmation %><br></b></p>
+    <%= form.text_field :password_confirmation, placeholder: "Re-Enter your new password", size: "25x10" %>
+  </div>
+  
+  <div>
+    <p><b><%= form.label :country %> of Residence<br></b></p>
+    <%= form.text_field :country, placeholder: "Enter your new country of residence here", size: "35x10" %>
+  </div>
+
+
+  <div>
+    <p><b><%= form.label :email %><br></b></p>
+    <%= form.text_field :email, placeholder: "Enter your email here", disabled: true %>
+  </div>
+
+  <div>
+    <p><b><%= form.label :image %> (optional)<br></b></p>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <p><%= form.submit %></p>
+  </div>
+
+<% end %>

@@ -1,6 +1,11 @@
 class TutorsController < ApplicationController
   def show
-    @tutor = Tutor.find(params[:id])
+    # disallow a tutor to view a non-existing tutor's profile
+    begin
+      @tutor = Tutor.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_url
+    end
   end
 
   def index
@@ -30,6 +35,33 @@ class TutorsController < ApplicationController
     end
   end
 
+  #This action will render app/views/tutors/edit.html.erb
+  def edit
+    # disallow a tutor to edit a non-existing tutor's profile
+    begin
+      @tutor = Tutor.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_url
+      return
+    end
+
+    # disallow a tutor to edit another tutor's profile
+    if session[:tutor_id] != @tutor.id
+      redirect_to root_url
+    end
+  end
+
+  def update
+    @tutor = Tutor.find(params[:id])
+
+    if @tutor.update(tutor_params)
+      redirect_to action: "show", id: @tutor.id
+    else
+      # can setup an error message here
+      render :edit
+    end
+  end 
+
   # helper
   private
 
@@ -38,6 +70,6 @@ class TutorsController < ApplicationController
   # permit some attributes to be used in the returned hash (whitelist)
   # if checks are passed, returns a hash that is used here to create or update a tutor object
   def tutor_params
-    params.require(:tutor).permit(:name, :password, :password_confirmation, :country, :email, :image)
+    params.require(:tutor).permit(:name, :password, :password_confirmation, :country, :email, :image).compact_blank
   end
 end

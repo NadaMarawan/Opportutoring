@@ -1,5 +1,4 @@
-<!-- <p>Find me in app/views/students/new.html.erb</p> -->
-<h1>New Student</h1>
+<h1>Edit Student Profile</h1>
 
 <%= form_with model: @student do |form| %>
 
@@ -16,22 +15,22 @@
 
   <div>
     <p><b><%= form.label :name %><br></b></p>
-    <%= form.text_field :name, placeholder: "Enter your name here" %>     
+    <%= form.text_field :name, placeholder: "Enter your name here", disabled: true %>     
   </div>
 
   <div>
-    <p><b><%= form.label :password %><br></b></p>
-    <%= form.password_field :password, placeholder: "Enter your password here", type: "password", id: "password", size: "25x10" %>
+    <p><b>Change <%= form.label :password %> (optional)<br></b></p>
+    <%= form.text_field :password, placeholder: "Change your password here", size: "25x10" %>
   </div>
 
   <div>
     <p><b><%= form.label :password_confirmation %><br></b></p>
-    <%= form.password_field :password_confirmation, placeholder: "Re-Enter your password here", type: "password", id: "password", size: "25x10" %>
+    <%= form.text_field :password_confirmation, placeholder: "Re-Enter your new password", size: "25x10" %>
   </div>
   
   <div>
     <p><b><%= form.label :country %> of Residence<br></b></p>
-    <%= form.text_field :country, placeholder: "Enter your country of residence here", size: "35x10" %>
+    <%= form.text_field :country, placeholder: "Enter your new country of residence here", size: "35x10" %>
   </div>
 
   <div>
@@ -41,7 +40,7 @@
 
   <div>
     <p><b><%= form.label :email %><br></b></p>
-    <%= form.text_field :email, placeholder: "Enter your email here" %>
+    <%= form.text_field :email, placeholder: "Enter your email here", disabled: true %>
   </div>
 
   <div>

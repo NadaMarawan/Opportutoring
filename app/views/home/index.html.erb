@@ -7,6 +7,7 @@
   <%= link_to "My Tutors", my_tutors_path(current_student.id) %><br><br>
   <%= link_to "My Matchings", all_matchings_path %><br><br>
   <%= link_to "My Profile", student_profile_path(current_student.id) %><br><br>
+  <%= link_to "Edit my Profile", student_profile_edit_path(current_student.id) %><br><br>
   <%= link_to "Log Out", student_logout_path %>
 <% elsif @current_tutor %>
   Logged in as <%= current_tutor.name %>   (<%= current_tutor.email %>)<br><br>
@@ -14,6 +15,7 @@
   <%= link_to "My Matchings", all_matchings_path %><br><br>
   <%= link_to "All Students", all_students_path %><br><br>
   <%= link_to "My Profile", tutor_profile_path(current_tutor.id) %><br><br>
+  <%= link_to "Edit my Profile", tutor_profile_edit_path(current_tutor.id) %><br><br>
   <%= link_to "Log Out", tutor_logout_path %>
 <% else %>
   <%= link_to "Sign Up as a Student", student_signup_path %><br><br>

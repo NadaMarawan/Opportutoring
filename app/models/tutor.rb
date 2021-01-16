@@ -6,7 +6,7 @@ class Tutor < ApplicationRecord
 
   # Validations
   validates :name, presence: true
-  validates :password, presence: true, length: { minimum: 8 }
-  validates :country, presence: true
+  validates :password, presence: true, length: { minimum: 8 }, allow_blank: true
+  validates :country, presence: true, allow_blank: true
   validates :email, presence: true, uniqueness: true
 end

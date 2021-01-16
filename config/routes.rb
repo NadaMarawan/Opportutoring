@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "/students/new", to: "students#new", as: "student_signup"
   get "/students/:id", to: "students#show", as: "student_profile"
   post "/students", to: "students#create"
+  get "/students/:id/edit", to: "students#edit", as: "student_profile_edit"
+  put "/students/:id", to: "students#update"
   resources :students
 
   # UI mockup page: all-students
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
   get "/tutors/new", to: "tutors#new", as: "tutor_signup"
   get "/tutors/:id", to: "tutors#show", as: "tutor_profile"
   post "/tutors", to: "tutors#create"
+  get "/tutors/:id/edit", to: "tutors#edit", as: "tutor_profile_edit"
+  put "/tutors/:id", to: "tutors#update"
   resources :tutors
 
   # UI mockup page: all-tutors

@@ -1,5 +1,9 @@
 <h1><%= @student.name %>'s Profile</h1>
 
+<% if @current_student&.id == @student.id %>
+  <h2><%=link_to "Edit my Profile", student_profile_edit_path(@student.id) %></h2>
+<% end %>
+
 <% if @student.image.attached? %>
   <img src="<%= (url_for(@student.image)) %>">
 <% end %>
