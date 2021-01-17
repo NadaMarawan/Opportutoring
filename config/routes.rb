@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   resources :student_sessions, only: [:new, :create, :destroy]
   get "students/login", to: "student_sessions#new", as: "student_login"
   get "students/logout", to: "student_sessions#destroy", as: "student_logout"
+  post "students/login", to: "student_sessions#create"
 
   resources :tutor_sessions, only: [:new, :create, :destroy]
   get "tutors/login", to: "tutor_sessions#new", as: "tutor_login"
   get "tutors/logout", to: "tutor_sessions#destroy", as: "tutor_logout"
+  post "tutors/login", to: "tutor_sessions#create"
 
   # UI mockup page: signup-student
   get "/students/new", to: "students#new", as: "student_signup"
