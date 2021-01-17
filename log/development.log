@@ -26036,3 +26036,23 @@ Processing by TutorsController#create as HTML
 Completed 200 OK in 515ms (Views: 78.3ms | ActiveRecord: 6.6ms | Allocations: 9714)
 
 
+Started GET "/" for 127.0.0.1 at 2021-01-16 22:17:55 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 653)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4358)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 4759)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 22:17:55 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 642)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 4360)
+Completed 200 OK in 77ms (Views: 75.4ms | ActiveRecord: 0.0ms | Allocations: 4761)
+
+
