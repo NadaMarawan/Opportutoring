@@ -24,6 +24,11 @@ class MatchingsController < ApplicationController
   def create
     @matching = Matching.new(matching_params)
 
+    if !session[:tutor_id] || session[:tutor_id] != matching_params[:tutor_id]
+      redirect_to root_url
+      return
+    end
+
     if @matching.save
       # go to show page for @matching
       redirect_to action: "show", id: @matching.id
