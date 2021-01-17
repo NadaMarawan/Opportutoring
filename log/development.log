@@ -24048,3 +24048,621 @@ Migrating to AddPasswordDigestToStudents (20210111013539)
   [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2720841869345367285)[0m
   [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:26:37 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 31.2ms | Allocations: 4614)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.6ms | Allocations: 8722)
+Completed 200 OK in 107ms (Views: 62.7ms | ActiveRecord: 0.0ms | Allocations: 11423)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:26:38 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 650)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 4352)
+Completed 200 OK in 45ms (Views: 39.9ms | ActiveRecord: 0.0ms | Allocations: 4745)
+
+
+Started GET "/tutors/login" for 127.0.0.1 at 2021-01-16 21:26:41 -0500
+Processing by TutorSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.8ms | Allocations: 5020)
+Completed 200 OK in 55ms (Views: 52.3ms | ActiveRecord: 0.0ms | Allocations: 5924)
+
+
+Started POST "/tutor_sessions" for 127.0.0.1 at 2021-01-16 21:26:42 -0500
+Processing by TutorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"IOAryISbQRazujPMRxGN7oQRfXik4qMeytwa3xERZ7M8FhBKMFM1sxdDtPgfGV8lwcIRXPb4sZkFEQUbIqFtuA", "email"=>"irem@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mTutor Load (2.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."email" = $1 LIMIT $2[0m  [["email", "irem@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutor_sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 4061)
+Completed 200 OK in 113ms (Views: 23.0ms | ActiveRecord: 13.1ms | Allocations: 9684)
+
+
+Started POST "/tutor_sessions" for 127.0.0.1 at 2021-01-16 21:26:50 -0500
+Processing by TutorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gi_iU8g9xhGFdSU32Zr7jN-l4_U7l8A4KFrlEFeyYittcwaiLrQJ8teXbLWP28xcngCYBCpM-kdUZg_gKnxDKA", "email"=>"irem@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mTutor Load (0.9ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."email" = $1 LIMIT $2[0m  [["email", "irem@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutor_sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4040)
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 0.9ms | Allocations: 5162)
+
+
+Started GET "/tutor_sessions" for 127.0.0.1 at 2021-01-16 21:26:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tutor_sessions"):
+  
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:26:56 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 4531)
+Completed 200 OK in 45ms (Views: 38.5ms | ActiveRecord: 0.0ms | Allocations: 5001)
+
+
+Started GET "/tutors/new" for 127.0.0.1 at 2021-01-16 21:26:58 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 44.5ms | Allocations: 3737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.2ms | Allocations: 7507)
+Completed 200 OK in 109ms (Views: 57.0ms | ActiveRecord: 33.6ms | Allocations: 12371)
+
+
+Started POST "/tutors" for 127.0.0.1 at 2021-01-16 21:27:24 -0500
+Processing by TutorsController#create as HTML
+  Parameters: {"authenticity_token"=>"RudtWy1op-0l1Zgc4zFx9b6nCe01ceS7vROhl4FnNKyiytrlHWQXURzHE0WRyD4CxaeAUZN_Q5bQmb-sCfLTzg", "tutor"=>{"name"=>"Nada Marawan", "password"=>"pppppppp", "password_confirmation"=>"pppppppp", "country"=>"Egypt", "email"=>"nada@mail.mcgill.ca"}, "commit"=>"Create Tutor"}
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tutors_controller.rb:28:in `create'
+  [1m[36mTutor Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "tutors" WHERE "tutors"."email" = $1 LIMIT $2[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:28:in `create'
+  [1m[36mTutor Create (2.5ms)[0m  [1m[32mINSERT INTO "tutors" ("name", "country", "created_at", "updated_at", "email", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nada Marawan"], ["country", "Egypt"], ["created_at", "2021-01-17 02:27:24.775878"], ["updated_at", "2021-01-17 02:27:24.775878"], ["email", "nada@mail.mcgill.ca"], ["password_digest", "$2a$12$dXcgDYN3ianl0N0qo9K8..tN0d4Z72uVxAmrMlNAvNumBT0tYMzsy"]]
+  ↳ app/controllers/tutors_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tutors_controller.rb:28:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 507ms (ActiveRecord: 9.9ms | Allocations: 4383)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:27:24 -0500
+Processing by HomeController#index as HTML
+  [1m[36mTutor Load (2.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendered home/index.html.erb within layouts/application (Duration: 21.7ms | Allocations: 2768)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 6473)
+Completed 200 OK in 50ms (Views: 41.3ms | ActiveRecord: 2.6ms | Allocations: 7699)
+
+
+Started GET "/tutors/1/students" for 127.0.0.1 at 2021-01-16 21:27:27 -0500
+Processing by TutorsController#mystudents as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (3.8ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mTutor Load (7.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:16:in `mystudents'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/mystudents.html.erb within layouts/application
+  [1m[36mMatching Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "matchings" WHERE "matchings"."tutor_id" = $1 LIMIT $2[0m  [["tutor_id", 1], ["LIMIT", 1]]
+  ↳ app/views/tutors/mystudents.html.erb:3
+  Rendered tutors/mystudents.html.erb within layouts/application (Duration: 42.1ms | Allocations: 4504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.1ms | Allocations: 8199)
+Completed 200 OK in 78ms (Views: 46.2ms | ActiveRecord: 19.9ms | Allocations: 10730)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-16 21:27:30 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mTutor Load (3.9ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (3.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 907)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 4666)
+Completed 200 OK in 59ms (Views: 30.4ms | ActiveRecord: 7.5ms | Allocations: 8584)
+
+
+Started GET "/matchings" for 127.0.0.1 at 2021-01-16 21:27:34 -0500
+Processing by MatchingsController#index as HTML
+  [1m[36mTutor Load (3.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendering layout layouts/application.html.erb
+  Rendering matchings/index.html.erb within layouts/application
+  [1m[36mMatching Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "matchings" WHERE "matchings"."tutor_id" = $1 LIMIT $2[0m  [["tutor_id", 1], ["LIMIT", 1]]
+  ↳ app/views/matchings/index.html.erb:3
+  Rendered matchings/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1055)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 4867)
+Completed 200 OK in 43ms (Views: 27.2ms | ActiveRecord: 6.1ms | Allocations: 6491)
+
+
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-16 21:27:37 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (3.9ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mTutor Load (1.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:5:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (3.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:7
+  Rendered tutors/show.html.erb within layouts/application (Duration: 30.3ms | Allocations: 3735)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 7449)
+Completed 200 OK in 55ms (Views: 31.8ms | ActiveRecord: 12.4ms | Allocations: 9972)
+
+
+Started GET "/tutors/logout" for 127.0.0.1 at 2021-01-16 21:27:42 -0500
+Processing by TutorSessionsController#destroy as HTML
+  [1m[36mTutor Load (3.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 12ms (ActiveRecord: 3.4ms | Allocations: 1696)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:27:42 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 653)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4360)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 4772)
+
+
+Started GET "/tutors/login" for 127.0.0.1 at 2021-01-16 21:27:53 -0500
+Processing by TutorSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 279)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 4790)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 5196)
+
+
+Started POST "/tutor_sessions" for 127.0.0.1 at 2021-01-16 21:27:57 -0500
+Processing by TutorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"6c8b13SMC8WiwVnMBN-vxHcYfpqbUaze0VCQzl8EU3P1OSBVwER_YAY43vhc130PMssSvslLvlkenY8KbLRZeA", "email"=>"nada@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mTutor Load (1.7ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."email" = $1 LIMIT $2[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutor_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 310ms (ActiveRecord: 1.7ms | Allocations: 1045)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:27:58 -0500
+Processing by HomeController#index as HTML
+  [1m[36mTutor Load (2.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Tutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendered home/index.html.erb within layouts/application (Duration: 23.1ms | Allocations: 2756)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 6460)
+Completed 200 OK in 40ms (Views: 33.0ms | ActiveRecord: 2.4ms | Allocations: 7554)
+
+
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-16 21:28:00 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (5.7ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mTutor Load (4.9ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:5:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:7
+  Rendered tutors/show.html.erb within layouts/application (Duration: 25.2ms | Allocations: 1077)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 4890)
+Completed 200 OK in 64ms (Views: 34.3ms | ActiveRecord: 12.3ms | Allocations: 7278)
+
+
+Started GET "/students" for 127.0.0.1 at 2021-01-16 21:28:02 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mTutor Load (1.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 698)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4505)
+Completed 200 OK in 27ms (Views: 16.8ms | ActiveRecord: 2.9ms | Allocations: 5734)
+
+
+Started GET "/tutors/logout" for 127.0.0.1 at 2021-01-16 21:28:05 -0500
+Processing by TutorSessionsController#destroy as HTML
+  [1m[36mTutor Load (6.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 6.2ms | Allocations: 1711)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:28:05 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 4367)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 4779)
+
+
+Started GET "/tutors/login" for 127.0.0.1 at 2021-01-16 21:28:09 -0500
+Processing by TutorSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 265)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 4767)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 5171)
+
+
+Started POST "/tutor_sessions" for 127.0.0.1 at 2021-01-16 21:28:10 -0500
+Processing by TutorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"qELrHVUifESMjZ3FC3vA1unZzo80eGM3Yk-ZcCe8Tli0tNCf4eoI4Sh0GvFTcxIdrAqiq2ZicbCtgoa0FAxEUw", "email"=>"irem@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mTutor Load (1.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."email" = $1 LIMIT $2[0m  [["email", "irem@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutor_sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 4037)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 1.6ms | Allocations: 5165)
+
+
+Started POST "/tutor_sessions" for 127.0.0.1 at 2021-01-16 21:28:15 -0500
+Processing by TutorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"e5-J5THDGaFvVcu2buujdEZ0y7tnmC4RhNpuxfasAGiUw20U10rWQj23gjQ4qpSkB9GwSnZDFG745oQ1i2Ihaw", "email"=>"nada@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mTutor Load (2.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."email" = $1 LIMIT $2[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutor_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 316ms (ActiveRecord: 2.2ms | Allocations: 1019)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:28:15 -0500
+Processing by HomeController#index as HTML
+  [1m[36mTutor Load (4.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendered home/index.html.erb within layouts/application (Duration: 18.4ms | Allocations: 2754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.0ms | Allocations: 6476)
+Completed 200 OK in 66ms (Views: 57.8ms | ActiveRecord: 4.3ms | Allocations: 7571)
+
+
+Started GET "/tutors/logout" for 127.0.0.1 at 2021-01-16 21:28:23 -0500
+Processing by TutorSessionsController#destroy as HTML
+  [1m[36mTutor Load (1.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms | Allocations: 971)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:28:23 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4367)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 4779)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2021-01-16 21:28:28 -0500
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 26.1ms | Allocations: 4835)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 8546)
+Completed 200 OK in 59ms (Views: 33.7ms | ActiveRecord: 9.4ms | Allocations: 13749)
+
+
+Started GET "/tutors/logout" for 127.0.0.1 at 2021-01-16 21:28:32 -0500
+Processing by TutorSessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 276)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:28:32 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 653)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 4358)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 4772)
+
+
+Started GET "/tutors/new" for 127.0.0.1 at 2021-01-16 21:28:33 -0500
+Processing by TutorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/new.html.erb within layouts/application
+  Rendered tutors/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1457)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 5976)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 6397)
+
+
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-16 21:29:43 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (2.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:5:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:7
+  Rendered tutors/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1262)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 5245)
+Completed 200 OK in 55ms (Views: 47.0ms | ActiveRecord: 3.1ms | Allocations: 7786)
+
+
+Started GET "/tutors/1/edit" for 127.0.0.1 at 2021-01-16 21:29:45 -0500
+Processing by TutorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (5.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:42:in `edit'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 5.5ms | Allocations: 953)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:29:45 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1063)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 4786)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 5697)
+
+
+Started GET "/tutors/1/edit" for 127.0.0.1 at 2021-01-16 21:29:50 -0500
+Processing by TutorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (5.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:42:in `edit'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 5.6ms | Allocations: 953)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:29:50 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 644)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 4364)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 4777)
+
+
+Started GET "/tutors/login" for 127.0.0.1 at 2021-01-16 21:29:54 -0500
+Processing by TutorSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tutor_sessions/new.html.erb within layouts/application
+  Rendered tutor_sessions/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 480)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 4997)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 5899)
+
+
+Started POST "/tutor_sessions" for 127.0.0.1 at 2021-01-16 21:29:59 -0500
+Processing by TutorSessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"1G5atSlHNcNBC88YiVWXyUJN_nOpilmqgmqTshG9UL7ImGE3nY9BZuXySCzRXUUCB56SV_uQSy1Np4x2Ig1atQ", "email"=>"nada@mail.mcgill.ca", "password_digest"=>"pppppppp", "commit"=>"Login"}
+  [1m[36mTutor Load (1.8ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."email" = $1 LIMIT $2[0m  [["email", "nada@mail.mcgill.ca"], ["LIMIT", 1]]
+  ↳ app/controllers/tutor_sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 424ms (ActiveRecord: 1.8ms | Allocations: 1042)
+
+
+Started GET "/" for 127.0.0.1 at 2021-01-16 21:30:00 -0500
+Processing by HomeController#index as HTML
+  [1m[36mTutor Load (0.7ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mCACHE Tutor Load (6.5ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  Rendered home/index.html.erb within layouts/application (Duration: 54.0ms | Allocations: 2764)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 84.9ms | Allocations: 6487)
+Completed 200 OK in 130ms (Views: 119.1ms | ActiveRecord: 7.3ms | Allocations: 7583)
+
+
+Started GET "/tutors/1/edit" for 127.0.0.1 at 2021-01-16 21:30:02 -0500
+Processing by TutorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (8.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mTutor Load (8.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:42:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/edit.html.erb within layouts/application
+  Rendered tutors/edit.html.erb within layouts/application (Duration: 15.6ms | Allocations: 2051)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 5859)
+Completed 200 OK in 87ms (Views: 47.0ms | ActiveRecord: 16.6ms | Allocations: 8375)
+
+
+Started PATCH "/tutors/1" for 127.0.0.1 at 2021-01-16 21:30:11 -0500
+Processing by TutorsController#update as HTML
+  Parameters: {"authenticity_token"=>"09n2nCtOtPDb18Tjk-jB51XRxJDTgCwzqeucqYKAL9uAQ8lVm0QJW9N9ZnsHodtGsC9sdjlczgVNcPSZYB5WCg", "tutor"=>{"password"=>"", "password_confirmation"=>"", "country"=>"Egypt", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ffbeb1f2518 @tempfile=#<Tempfile:/var/folders/05/dcr6lklj6bg0cr7jb6l4sl_40000gn/T/RackMultipart20210116-47971-1gwitcm.jpeg>, @original_filename="fifi4.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"tutor[image]\"; filename=\"fifi4.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Tutor", "id"=>"1"}
+  [1m[36mTutor Load (1.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mTutor Load (1.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tutors_controller.rb:57:in `update'
+  [1m[36mTutor Exists? (5.0ms)[0m  [1m[34mSELECT 1 AS one FROM "tutors" WHERE "tutors"."email" = $1 AND "tutors"."id" != $2 LIMIT $3[0m  [["email", "nada@mail.mcgill.ca"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:57:in `update'
+  [1m[36mActiveStorage::Blob Load (4.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:57:in `update'
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:57:in `update'
+  [1m[36mActiveStorage::Blob Create (9.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "a7g2llgbytmmx07e19in678q8idu"], ["filename", "fifi4.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 7684], ["checksum", "FHjgGYkNvQ3aQGobhCWN+A=="], ["created_at", "2021-01-17 02:30:11.503176"]]
+  ↳ app/controllers/tutors_controller.rb:57:in `update'
+  [1m[36mActiveStorage::Attachment Create (9.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Tutor"], ["record_id", 1], ["blob_id", 1], ["created_at", "2021-01-17 02:30:11.527392"]]
+  ↳ app/controllers/tutors_controller.rb:57:in `update'
+  [1m[36mTutor Update (4.4ms)[0m  [1m[33mUPDATE "tutors" SET "updated_at" = $1 WHERE "tutors"."id" = $2[0m  [["updated_at", "2021-01-17 02:30:11.545171"], ["id", 1]]
+  ↳ app/controllers/tutors_controller.rb:57:in `update'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tutors_controller.rb:57:in `update'
+[36m  Disk Storage (5.3ms) [0m[32mUploaded file to key: a7g2llgbytmmx07e19in678q8idu (checksum: FHjgGYkNvQ3aQGobhCWN+A==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: af55def2-12ff-457a-8634-13946829e80d) to Async(default) with arguments: #<GlobalID:0x00007ffbe7d4d1f0 @uri=#<URI::GID gid://opportutoring/ActiveStorage::Blob/1>>
+Redirected to http://127.0.0.1:3000/tutors/1
+Completed 302 Found in 293ms (ActiveRecord: 56.2ms | Allocations: 46109)
+
+
+Started GET "/tutors/1" for 127.0.0.1 at 2021-01-16 21:30:11 -0500
+Processing by TutorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (13.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af55def2-12ff-457a-8634-13946829e80d] Performing ActiveStorage::AnalyzeJob (Job ID: af55def2-12ff-457a-8634-13946829e80d) from Async(default) enqueued at 2021-01-17T02:30:11Z with arguments: #<GlobalID:0x00007ffbeb257760 @uri=#<URI::GID gid://opportutoring/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af55def2-12ff-457a-8634-13946829e80d] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: a7g2llgbytmmx07e19in678q8idu[0m
+  [1m[36mTutor Load (36.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:5:in `show'
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af55def2-12ff-457a-8634-13946829e80d] Skipping image analysis because the mini_magick gem isn't installed
+  Rendering layout layouts/application.html.erb
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af55def2-12ff-457a-8634-13946829e80d]   [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  Rendering tutors/show.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af55def2-12ff-457a-8634-13946829e80d]   [1m[36mActiveStorage::Blob Update (27.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  [1m[36mActiveStorage::Attachment Load (15.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Tutor"], ["name", "image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af55def2-12ff-457a-8634-13946829e80d]   [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af55def2-12ff-457a-8634-13946829e80d] Performed ActiveStorage::AnalyzeJob (Job ID: af55def2-12ff-457a-8634-13946829e80d) from Async(default) in 91.44ms
+  ↳ app/views/tutors/show.html.erb:7
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tutors/show.html.erb:8
+  Rendered tutors/show.html.erb within layouts/application (Duration: 102.8ms | Allocations: 4219)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 149.8ms | Allocations: 8350)
+Completed 200 OK in 214ms (Views: 138.9ms | ActiveRecord: 67.0ms | Allocations: 12034)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c24525e477d9cd32142890b948548a255f559fd/fifi4.jpeg" for 127.0.0.1 at 2021-01-16 21:30:11 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c24525e477d9cd32142890b948548a255f559fd", "filename"=>"fifi4"}
+  [1m[36mActiveStorage::Blob Load (16.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: a7g2llgbytmmx07e19in678q8idu (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVGRuTW14c1oySjVkRzF0ZURBM1pURTVhVzQyTnpoeE9HbGtkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazBMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyWnBabWswTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wMS0xN1QwMjozNToxMi4wNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--405e7bd6dccf87852d03c665a06867d7632cd4f1/fifi4.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVGRuTW14c1oySjVkRzF0ZURBM1pURTVhVzQyTnpoeE9HbGtkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazBMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyWnBabWswTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wMS0xN1QwMjozNToxMi4wNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--405e7bd6dccf87852d03c665a06867d7632cd4f1/fifi4.jpeg
+Completed 302 Found in 40ms (ActiveRecord: 16.0ms | Allocations: 1882)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVGRuTW14c1oySjVkRzF0ZURBM1pURTVhVzQyTnpoeE9HbGtkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazBMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyWnBabWswTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wMS0xN1QwMjozNToxMi4wNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--405e7bd6dccf87852d03c665a06867d7632cd4f1/fifi4.jpeg" for 127.0.0.1 at 2021-01-16 21:30:12 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVGRuTW14c1oySjVkRzF0ZURBM1pURTVhVzQyTnpoeE9HbGtkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazBMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyWnBabWswTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wMS0xN1QwMjozNToxMi4wNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--405e7bd6dccf87852d03c665a06867d7632cd4f1", "filename"=>"fifi4"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 347)
+
+
+Started GET "/tutors/1/edit" for 127.0.0.1 at 2021-01-16 21:30:20 -0500
+Processing by TutorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (2.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mTutor Load (2.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:42:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/edit.html.erb within layouts/application
+  Rendered tutors/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1499)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 5306)
+Completed 200 OK in 39ms (Views: 20.9ms | ActiveRecord: 4.4ms | Allocations: 7695)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVGRuTW14c1oySjVkRzF0ZURBM1pURTVhVzQyTnpoeE9HbGtkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazBMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyWnBabWswTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wMS0xN1QwMjozNToxMi4wNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--405e7bd6dccf87852d03c665a06867d7632cd4f1/fifi4.jpeg" for 127.0.0.1 at 2021-01-16 21:30:20 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVGRuTW14c1oySjVkRzF0ZURBM1pURTVhVzQyTnpoeE9HbGtkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazBMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyWnBabWswTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wMS0xN1QwMjozNToxMi4wNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--405e7bd6dccf87852d03c665a06867d7632cd4f1", "filename"=>"fifi4"}
+Completed 200 OK in 31ms (ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVGRuTW14c1oySjVkRzF0ZURBM1pURTVhVzQyTnpoeE9HbGtkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazBMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyWnBabWswTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wMS0xN1QwMjozNToxMi4wNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--405e7bd6dccf87852d03c665a06867d7632cd4f1/fifi4.jpeg" for 127.0.0.1 at 2021-01-16 21:31:01 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVGRuTW14c1oySjVkRzF0ZURBM1pURTVhVzQyTnpoeE9HbGtkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1acFptazBMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyWnBabWswTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMS0wMS0xN1QwMjozNToxMi4wNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--405e7bd6dccf87852d03c665a06867d7632cd4f1", "filename"=>"fifi4"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 302)
+
+
+Started GET "/tutors/1/edit" for 127.0.0.1 at 2021-01-16 21:31:02 -0500
+Processing by TutorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (1.7ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `current_tutor'
+  [1m[36mTutor Load (0.9ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tutors_controller.rb:42:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering tutors/edit.html.erb within layouts/application
+  Rendered tutors/edit.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1489)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 5278)
+Completed 200 OK in 39ms (Views: 21.4ms | ActiveRecord: 2.6ms | Allocations: 6950)
+
+
