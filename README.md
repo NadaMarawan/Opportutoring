@@ -1,24 +1,20 @@
-# README
+# Opportutoring
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About this app
+This application was made as part of my application to Shopify's Backend Developer Internship for Summer 2021!
 
-Things you may want to cover:
+The app is a Rails app with Vanilla views (html/css) and comes with Image upload and edit as well as auth functionality.
 
-* Ruby version
+## How to run
+### Heroku
+This application is continously deployed on [Heroku](https://opportutoring.herokuapp.com/)
 
-* System dependencies
+### Locally
+To install dependencies run 
+`bundle install`
+Ensure that postgresql is running (see [instructions](https://www.postgresql.org/download/) for your operating system)
 
-* Configuration
+Run the application 
+`bin/rails s`
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
