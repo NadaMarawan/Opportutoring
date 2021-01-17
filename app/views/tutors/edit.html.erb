@@ -1,6 +1,11 @@
-<h1>Edit Tutor Profile</h1>
+<%= render "shared/navbar" %>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
 
-<%= form_with model: @tutor do |form| %>
+<h3>Edit Tutor Profile</h3><br>
+
+<%= form_with model: @tutor do |form| %><br>
 
 <% if @tutor.errors.any? %>
           <div id="error_explanation">
@@ -13,39 +18,43 @@
           </div>
         <% end %>
 
-  <div>
-    <p><b><%= form.label :name %><br></b></p>
-    <%= form.text_field :name, placeholder: "Enter your name here", disabled: true %>     
+  <div class="form-group">
+    <p><b><%= form.label :name %></b></p>
+    <%= form.text_field :name, placeholder: "Enter your name here", disabled: true, class: "form-control" %>     
   </div>
 
-  <div>
-    <p><b> Change <%= form.label :password %> (optional)<br></b></p>
-    <%= form.password_field :password, placeholder: "Change your password here", size: "25x10" %>
+  <div class="form-group">
+    <p><b> Change <%= form.label :password %> (optional)</b></p>
+    <%= form.password_field :password, placeholder: "Change your password here", size: "25x10", class: "form-control" %>
   </div>
 
-  <div>
-    <p><b><%= form.label :password_confirmation %><br></b></p>
-    <%= form.password_field :password_confirmation, placeholder: "Re-Enter your new password", size: "25x10" %>
+  <div class="form-group">
+    <p><b><%= form.label :password_confirmation %></b></p>
+    <%= form.password_field :password_confirmation, placeholder: "Re-Enter your new password", size: "25x10", class: "form-control" %>
   </div>
   
-  <div>
-    <p><b><%= form.label :country %> of Residence<br></b></p>
-    <%= form.text_field :country, placeholder: "Enter your new country of residence here", size: "35x10" %>
+  <div class="form-group">
+    <p><b><%= form.label :country %> of Residence</b></p>
+    <%= form.text_field :country, placeholder: "Enter your new country of residence here", size: "35x10", class: "form-control" %>
   </div>
 
 
-  <div>
-    <p><b><%= form.label :email %><br></b></p>
-    <%= form.text_field :email, placeholder: "Enter your email here", disabled: true %>
+  <div class="form-group">
+    <p><b><%= form.label :email %></b></p>
+    <%= form.text_field :email, placeholder: "Enter your email here", disabled: true, class: "form-control" %>
   </div>
 
-  <div>
-    <p><b><%= form.label :image %> (optional)<br></b></p>
-    <%= form.file_field :image %>
+  <div class="form-group">
+    <p><b><%= form.label :image %> (optional)</b></p>
+    <%= form.file_field :image, class: "form-control" %>
   </div>
 
-  <div>
-    <p><%= form.submit %></p>
+  <div class="form-group">
+    <p><%= form.submit class: "form-control" %></p>
   </div>
 
 <% end %>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>

@@ -1,52 +1,60 @@
-<!-- <h1>Tutors#new</h1> -->
-<!-- <p>Find me in app/views/tutors/new.html.erb</p> -->
-<h1>New Tutor</h1>
-<%= form_with model: @tutor do |form| %>
+<%= render "shared/navbar" %>
 
-<% if @tutor.errors.any? %>
-          <div id="error_explanation">
-            <h3 style="color:red"><%= pluralize(@tutor.errors.count, "Error") %>:</h3>
-            <ul>
-              <% @tutor.errors.each do |error| %>
-                <li style="color:red"><%= error.full_message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
 
-  <div>
-    <p><b>Preferred <%= form.label :name %><br></b></p>
-    <%= form.text_field :name, placeholder: "Enter your name here" %>
+  <h2>New Tutor</h2><br>
+    <%= form_with model: @tutor do |form| %>
+
+    <% if @tutor.errors.any? %>
+              <div id="error_explanation">
+                <h3 style="color:red"><%= pluralize(@tutor.errors.count, "Error") %>:</h3>
+                <ul>
+                  <% @tutor.errors.each do |error| %>
+                    <li style="color:red"><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+      <div class="form-group">
+        <p><b><%= form.label :name %></b></p>
+        <%= form.text_field :name, placeholder: "Enter your name here", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <p><b><%= form.label :password %></b></p>
+        <%= form.text_field :password, placeholder: "Enter your password here", type: "password", id: "password", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <p><b><%= form.label :password_confirmation %></b></p>
+        <%= form.password_field :password_confirmation, placeholder: "Re-Enter your password here", type: "password", id: "password", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <p><b><%= form.label :country %> of Residence</b></p>
+        <%= form.text_field :country, placeholder: "Enter your country of residence here", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <p><b><%= form.label :email %></b></p>
+        <%= form.text_field :email, placeholder: "Enter your email here", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <p><b><%= form.label :image %> (optional)<br></b></p>
+        <%= form.file_field :image, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <p><%= form.submit class: "form-control" %></p>
+      </div>
+
+    <% end %>
+
+
   </div>
-
-  <div>
-    <p><b><%= form.label :password %><br></b></p>
-    <%= form.text_field :password, placeholder: "Enter your password here", type: "password", id: "password", size: "25x10" %>
-  </div>
-
-  <div>
-    <p><b><%= form.label :password_confirmation %><br></b></p>
-    <%= form.password_field :password_confirmation, placeholder: "Re-Enter your password here", type: "password", id: "password", size: "25x10" %>
-  </div>
-
-  <div>
-    <p><b><%= form.label :country %> of Residence<br></b></p>
-    <%= form.text_field :country, placeholder: "Enter your country of residence here", size: "35x10" %>
-  </div>
-
-  <div>
-    <p><b><%= form.label :email %><br></b></p>
-    <%= form.text_field :email, placeholder: "Enter your email here" %>
-  </div>
-
-  <div>
-    <p><b><%= form.label :image %> (optional)<br></b></p>
-    <%= form.file_field :image %>
-  </div>
-
-  <div>
-    <p><%= form.submit %></p>
-  </div>
-
-<% end %>
-
+  <div class="col-sm-1"></div>
+</div>

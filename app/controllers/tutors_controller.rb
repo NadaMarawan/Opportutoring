@@ -60,7 +60,7 @@ class TutorsController < ApplicationController
       # can setup an error message here
       render :edit
     end
-  end 
+  end
 
   # helper
   private

@@ -1,13 +1,23 @@
-<h1> Students matched with <%= @tutor.name %> </h1>
+<%= render "shared/navbar" %>
 
-<% if !@tutor.matchings.empty? %>
-    <ul>
-        <% @tutor.students.each do |student| %>
-        <li><b> <%= link_to student.name, student_path(student) %> </b></li>
-            <b>Email:</b> <%=student.email%><br>
-            <b>Currently resides in:</b> <%=student.country%><br><br>
-        <% end %>
-    </ul>
-<% else %>
-You have no current matchings.
-<% end %>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
+
+    <h3> Students matched with <%= @tutor.name %> </h3><br><br>
+
+    <% if !@tutor.matchings.empty? %>
+        <ul>
+            <% @tutor.students.each do |student| %>
+            <li><b> <%= link_to student.name, student_path(student) %> </b></li><br>
+                <b>Email:</b> <%= student.email %><br>
+                <b>Currently resides in:</b> <%= student.country %><br><br><br>
+            <% end %>
+        </ul>
+    <% else %>
+    You have no current matchings.
+    <% end %>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>

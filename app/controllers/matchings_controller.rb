@@ -4,12 +4,11 @@ class MatchingsController < ApplicationController
   end
 
   def index
-
-    if @current_student 
+    if @current_student
       @matchings = @current_student.matchings
     elsif @current_tutor
       @matchings = @current_tutor.matchings
-    else 
+    else
       @matchings = Matching.all
     end
   end
@@ -24,7 +23,7 @@ class MatchingsController < ApplicationController
   def create
     @matching = Matching.new(matching_params)
 
-    if !session[:tutor_id] || session[:tutor_id] != matching_params[:tutor_id]
+    if !session[:tutor_id] || session[:tutor_id] != @matching.tutor.id
       redirect_to root_url
       return
     end
@@ -50,7 +49,8 @@ class MatchingsController < ApplicationController
   # permit some attributes to be used in the returned hash (whitelist)
   # if checks are passed, returns a hash that is used here to create or update a matching object
   private
-    def matching_params
-      params.require(:matching).permit(:tutor_id, :student_id)
-    end
+
+  def matching_params
+    params.require(:matching).permit(:tutor_id, :student_id)
+  end
 end

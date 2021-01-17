@@ -1,16 +1,27 @@
-<h1><%= @student.name %>'s Profile</h1>
+<%= render "shared/navbar" %>
 
-<% if @current_student&.id == @student.id %>
-  <h2><%=link_to "Edit my Profile", student_profile_edit_path(@student.id) %></h2>
-<% end %>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
 
-<% if @student.image.attached? %>
-  <img src="<%= (url_for(@student.image)) %>">
-<% end %>
+    <h3><%= @student.name %>'s Profile</h3>
 
-<p><u>Name</u>: <%= @student.name %></p>
-<p><u>Email</u>: <%= @student.email %></p>
-<p><u>English Level</u>: <%= @student.level %></p>
-<p><u>Country of Residence</u>: <%= @student.country %></p>
+    <% if @current_student&.id == @student.id %>
+      <h5><%= link_to "Edit my Profile", student_profile_edit_path(@student.id) %></h5><br>
+    <% end %>
+
+    <% if @student.image.attached? %>
+      <img class="img-rounded" src="<%= (url_for(@student.image)) %>"><br><br>
+    <% end %>
+
+    <p><u>Name</u>: <%= @student.name %></p>
+    <p><u>Email</u>: <%= @student.email %></p>
+    <p><u>English Level</u>: <%= @student.level %></p>
+    <p><u>Country of Residence</u>: <%= @student.country %></p>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+
 
 

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Opportutoring</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_url %></li>
+        <% if @current_student %>
+          <li><%= link_to "My Tutors", my_tutors_path(current_student.id) %></li>
+          <li><%= link_to "My Matchings", all_matchings_path %></li>
+          <li><%= link_to "My Profile", student_profile_path(current_student.id) %></li>
+          <li><%= link_to "Edit my Profile", student_profile_edit_path(current_student.id) %></li>
+        <% elsif @current_tutor %>
+          <li><%= link_to "My Students", my_students_path(current_tutor.id) %></li>
+          <li><%= link_to "My Matchings", all_matchings_path %></li>
+          <li><%= link_to "All Students", all_students_path %></li>
+          <li><%= link_to "My Profile", tutor_profile_path(current_tutor.id) %></li>
+          <li><%= link_to "Edit my Profile", tutor_profile_edit_path(current_tutor.id) %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if @current_student %>
+          <li><%= link_to "Log Out", student_logout_path %></li>
+        <% elsif @current_tutor %>
+          <li><%= link_to "Log Out", tutor_logout_path %></li>
+        <% else %>
+          <li><%= link_to "Sign Up as a Student", student_signup_path %></li>
+          <li><%= link_to "Sign Up as a Tutor", tutor_signup_path %></li>
+          <li><%= link_to "Log In as a Student", student_login_path %></li>
+          <li><%= link_to "Log In as a Tutor", tutor_login_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

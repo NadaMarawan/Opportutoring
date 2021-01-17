@@ -1,13 +1,23 @@
-<h1><%= @tutor.name %>'s Profile<br><br></h1>
+<%= render "shared/navbar" %>
 
-<% if @current_tutor&.id == @tutor.id %>
-  <h2><%= link_to "Edit my Profile", tutor_profile_edit_path(@tutor.id) %></h2>
-<% end %>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
 
-<% if @tutor.image.attached? %>
-  <img src="<%= (url_for(@tutor.image)) %>">
-<% end %>
+    <h3><%= @tutor.name %>'s Profile<br></h3>
 
-<p><u>Name</u>: <%= @tutor.name %></p>
-<p><u>Email</u>: <%= @tutor.email %></p>
-<p><u>Country of Residence</u>: <%= @tutor.country %></p>
+    <% if @current_tutor&.id == @tutor.id %>
+      <h5><%= link_to "Edit my Profile", tutor_profile_edit_path(@tutor.id) %></h5><br>
+    <% end %>
+
+    <% if @tutor.image.attached? %>
+      <img class="img-rounded" src="<%= (url_for(@tutor.image)) %>"><br><br>
+    <% end %>
+    
+    <p><u>Name</u>: <%= @tutor.name %></p>
+    <p><u>Email</u>: <%= @tutor.email %></p>
+    <p><u>Country of Residence</u>: <%= @tutor.country %></p>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>

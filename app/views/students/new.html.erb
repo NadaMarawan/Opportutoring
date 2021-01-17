@@ -1,56 +1,64 @@
-<!-- <p>Find me in app/views/students/new.html.erb</p> -->
-<h1>New Student</h1>
+<%= render "shared/navbar" %>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
 
-<%= form_with model: @student do |form| %>
+<h2>New Student</h2><br>
 
-<% if @student.errors.any? %>
-          <div id="error_explanation">
-            <h3 style="color:red"><%= pluralize(@student.errors.count, "Error") %>:</h3>
-            <ul>
-              <% @student.errors.each do |error| %>
-                <li style="color:red"><%= error.full_message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
+    <%= form_with model: @student do |form| %>
 
-  <div>
-    <p><b><%= form.label :name %><br></b></p>
-    <%= form.text_field :name, placeholder: "Enter your name here" %>     
-  </div>
+    <% if @student.errors.any? %>
+              <div id="error_explanation">
+                <h3 style="color:red"><%= pluralize(@student.errors.count, "Error") %>:</h3>
+                <ul>
+                  <% @student.errors.each do |error| %>
+                    <li style="color:red"><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
 
-  <div>
-    <p><b><%= form.label :password %><br></b></p>
-    <%= form.password_field :password, placeholder: "Enter your password here", type: "password", id: "password", size: "25x10" %>
-  </div>
+      <div class="form-group">
+        <p><b><%= form.label :name %></b></p>
+        <%= form.text_field :name, placeholder: "Enter your name here", class: "form-control" %>     
+      </div>
 
-  <div>
-    <p><b><%= form.label :password_confirmation %><br></b></p>
-    <%= form.password_field :password_confirmation, placeholder: "Re-Enter your password here", type: "password", id: "password", size: "25x10" %>
-  </div>
-  
-  <div>
-    <p><b><%= form.label :country %> of Residence<br></b></p>
-    <%= form.text_field :country, placeholder: "Enter your country of residence here", size: "35x10" %>
-  </div>
+      <div class="form-group">
+        <p><b><%= form.label :password %></b></p>
+        <%= form.password_field :password, placeholder: "Enter your password here", type: "password", id: "password", size: "25x10", class: "form-control" %>
+      </div>
 
-  <div>
-    <p><b>English <%= form.label :level %><br></b></p>
-    <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]) %>
-  </div> 
+      <div class="form-group">
+        <p><b><%= form.label :password_confirmation %></b></p>
+        <%= form.password_field :password_confirmation, placeholder: "Re-Enter your password here", type: "password", id: "password", size: "25x10", class: "form-control" %>
+      </div>
+      
+      <div class="form-group">
+        <p><b><%= form.label :country %> of Residence</b></p>
+        <%= form.text_field :country, placeholder: "Enter your country of residence here", size: "35x10", class: "form-control" %>
+      </div>
 
-  <div>
-    <p><b><%= form.label :email %><br></b></p>
-    <%= form.text_field :email, placeholder: "Enter your email here" %>
-  </div>
+      <div class="form-group">
+        <p><b>English <%= form.label :level %></b></p>
+        <%= form.select :level, options_for_select(["beginner", "intermediate", "advanced"]), class: "form-control" %>
+      </div> 
 
-  <div>
-    <p><b><%= form.label :image %> (optional)<br></b></p>
-    <%= form.file_field :image %>
-  </div>
+      <div class="form-group">
+        <p><b><%= form.label :email %></b></p>
+        <%= form.text_field :email, placeholder: "Enter your email here", class: "form-control" %>
+      </div>
 
-  <div>
-    <p><%= form.submit %></p>
-  </div>
+      <div class="form-group">
+        <p><b><%= form.label :image %> (optional)</b></p>
+        <%= form.file_field :image, class: "form-control" %>
+      </div>
 
-<% end %>
+      <div class="form-group">
+        <p><%= form.submit class: "form-control" %></p>
+      </div>
+
+    <% end %>
+
+</div>
+  <div class="col-sm-1"></div>
+</div>

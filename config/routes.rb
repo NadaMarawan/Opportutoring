@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root "home#index"
 
   resources :student_sessions, only: [:new, :create, :destroy]

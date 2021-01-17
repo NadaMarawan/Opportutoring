@@ -1,13 +1,23 @@
-<h1>All Students</h1>
+<%= render "shared/navbar" %>
 
-<ul>
-  <% @students.each do |student| %>
-    <li>
-      <%= link_to student.name, student_path(student) %><br>
-      <b>Email:</b> <%=student.email%><br>
-      <b>Currently resides in:</b> <%=student.country%><br>
-      Currently matched with <b><%=student.matchings.count%></b> tutor(s)<br>
-      <%= link_to "Match Student", new_matching_path %><br><br>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
+
+  <h3>All Students</h3><br>
+
+  <ul>
+    <% @students.each do |student| %>
+      <li>
+        <%= link_to student.name, student_path(student) %><br><br>
+        <b>Email:</b> <%= student.email %><br>
+        <b>Currently resides in:</b> <%= student.country %><br>
+        Currently matched with <b><%= student.matchings.count %></b> tutor(s)<br>
+        <%= link_to "Match Student", new_matching_path %><br><br>
+      </li><br>
+    <% end %>
+  </ul>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>

@@ -12,12 +12,11 @@ class Student < ApplicationRecord
   validates :country, presence: true, if: :should_validate_country?
   validates :email, presence: true, uniqueness: true
 
-  def should_validate_password? 
+  def should_validate_password?
     new_record? || (password.present? && password_confirmation.present?)
   end
 
-  def should_validate_country? 
+  def should_validate_country?
     new_record? || country.present?
   end
-
 end

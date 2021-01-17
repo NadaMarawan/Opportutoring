@@ -1,9 +1,19 @@
-<h1>All Tutors</h1>
+<%= render "shared/navbar" %>
 
-<ul>
-  <% @tutors.each do |tutor| %>
-    <li>
-      <%= link_to tutor.name, tutor_path(tutor) %>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
+
+  <h3>All Tutors</h3><br>
+
+  <ul>
+    <% @tutors.each do |tutor| %>
+      <li>
+        <%= link_to tutor.name, tutor_path(tutor) %>
+      </li><br>
+    <% end %>
+  </ul>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>

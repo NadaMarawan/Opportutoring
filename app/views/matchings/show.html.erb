@@ -1,4 +1,13 @@
-<h1>New Matching Created</h1>
-<b> Matching #<%= @matching.id %> </b></li>
-<p> Tutor: <%= link_to @matching.tutor.name, tutor_path(@matching.tutor) %> (email: <%= @matching.tutor.email %>)</p>
-<p> Student: <%= link_to @matching.student.name, student_path(@matching.student) %> (email: <%= @matching.student.email %>)</p>
+<%= render "shared/navbar" %>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
+
+    <h3>New Matching Created</h3><br>
+    <h4> Matching #<%= @matching.id %> </h4>
+    <p> Tutor: <%= link_to @matching.tutor.name, tutor_path(@matching.tutor) %> (email: <%= @matching.tutor.email %>)</p>
+    <p> Student: <%= link_to @matching.student.name, student_path(@matching.student) %> (email: <%= @matching.student.email %>)</p>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>

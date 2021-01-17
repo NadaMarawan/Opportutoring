@@ -1,13 +1,23 @@
-<h1>Current matchings</h1>
+<%= render "shared/navbar" %>
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8">
+
+<h3>Current matchings</h3><br>
 
 <% if !@matchings.empty? %>
     <ul>
         <% @matchings.each do |matching| %>
-        <li><b> Matching #<%= matching.id %> </b></li>
+        <li><b> Matching #<%= matching.id %> </b></li><br>
             <p> Tutor: <%= link_to matching.tutor.name, tutor_path(matching.tutor) %> (email: <%= matching.tutor.email %>)</p>
-            <p> Student: <%= link_to matching.student.name, student_path(matching.student) %> (email: <%= matching.student.email %>)</p>
+            <p> Student: <%= link_to matching.student.name, student_path(matching.student) %> (email: <%= matching.student.email %>)</p><br><br>
         <% end %>
     </ul>
 <% else %>
 Sorry, no current matching yet!
 <% end %>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>
