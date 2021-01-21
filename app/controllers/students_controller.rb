@@ -31,7 +31,7 @@ class StudentsController < ApplicationController
       session[:tutor_id] = nil
       redirect_to root_url, notice: "Logged in!"
     else
-      # can setup an error message here
+      # can setup an error message here @student.errors [coming from validations]
       render :new
     end
   end

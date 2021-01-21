@@ -1,7 +1,11 @@
 class Student < ApplicationRecord
+  # Encrypt password: hash password (stores it as password digest)
   has_secure_password
+
+  # Enumeration
   enum level: [:beginner, :intermediate, :advanced]
 
+  # Associations
   has_many :matchings
   has_many :tutors, through: :matchings
   has_one_attached :image
@@ -12,6 +16,8 @@ class Student < ApplicationRecord
   validates :country, presence: true, if: :should_validate_country?
   validates :email, presence: true, uniqueness: true
 
+  # Only validate the password if it is a new record OR if user changes their password
+  # Used when trying to update profiles
   def should_validate_password?
     new_record? || (password.present? && password_confirmation.present?)
   end
